@@ -274,7 +274,256 @@
 </li>
 </ul>
 <p>OpenAI Gym okolja za izvajanje spodbujevalnega učenja
-https://gym.openai.com/</p>
+(https://gym.openai.com/)</p>
+<h2 id="programsko-okolje">Programsko okolje</h2>
+<h3 id="openai-gym">OpenAI Gym</h3>
+<ul>
+<li>OpenAI Gym<ul>
+<li>Simulacij različnih okolij</li>
+<li>Pred pripravljena okolja</li>
+<li>Struktura za razvoj lastnih okolij</li>
+</ul>
+</li>
+</ul>
+<p>(https://gymnasium.farama.org/environments/toy_text/cliff_walking/)</p>
+<p>https://gymnasium.farama.org/environments/mujoco/</p>
+<h3 id="stable-baselines3">Stable Baselines3</h3>
+<ul>
+<li>Knjižnica za algoritme za spodbujevalno učenje<ul>
+<li>Globoko spodbujevalno učenje</li>
+</ul>
+</li>
+<li>Stable Baselines3 (SB3) algoritmi za spodbujevalno učenje<ul>
+<li>https://stable-baselines3.readthedocs.io/en/master/#</li>
+<li>vsebuje še druga okolja v skladu s strukturo OpenAI Gym</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="images/Picture6.png" /></p>
+<h3 id="priprava-python-okolja">Priprava python okolja</h3>
+<ul>
+<li>https://www.anaconda.com/</li>
+<li>conda<ul>
+<li>Ustvarjanje različnih okolij v katerih imate lahko inštalirane programske pakete za rezlične pakete
+-Inštalacije so ločene med okolji in ne vplivajo drugo na drugo</li>
+<li>Windowsi, Linux, ...</li>
+</ul>
+</li>
+<li>Inštalacija po navodilih<ul>
+<li>conda config --set auto_activate_base false</li>
+</ul>
+</li>
+</ul>
+<h4 id="ustvarjanje-okolja">Ustvarjanje okolja</h4>
+<p><code>conda create --name rl_smpl_2 python=3.9</code></p>
+<h4 id="aktivacija-okolja">Aktivacija okolja</h4>
+<p><code>conda activate rl_smpl_2</code></p>
+<h4 id="deaktivacija-okolja">Deaktivacija okolja</h4>
+<p><code>conda deactivate</code></p>
+<p>Četrtkova skupina
+- conda okolje rl_cet</p>
+<p>Petkova skupina
+- conda okolje rl_pet</p>
+<h1 id="q-ucenje">Q učenje</h1>
+<p><img alt="alt text" src="images/Picture7.png" /></p>
+<h2 id="primer-okolja-cliff-walking">Primer okolja <em>Cliff Walking</em></h2>
+<p>https://gymnasium.farama.org/environments/toy_text/cliff_walking/</p>
+<ol>
+<li>
+<p>Začnemo z novo python skripto</p>
+</li>
+<li>
+<p>Uvoz potrebnih paketov</p>
+</li>
+</ol>
+<pre><code class="language-python">import gym
+import numpy as np
+import random
+from time import sleep
+</code></pre>
+<ol>
+<li>
+<p>Deklaracija okolja</p>
+<ul>
+<li>your_env = gym.make("YourEnv ", some_kwarg=your_vars)</li>
+<li>
+<p>your_env = gym.make("YourEnv")</p>
+</li>
+<li>
+<p>Seznam okolij
+    https://gymnasium.farama.org/environments/toy_text/</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-python">env = gym.make('CliffWalking-v0')
+</code></pre>
+<ol>
+<li>Resetiramo in prikažemo okolje</li>
+</ol>
+<pre><code class="language-python">env.reset()
+env.render()
+</code></pre>
+<ol>
+<li>Prikažemo nekaj parametrov</li>
+</ol>
+<pre><code class="language-python">print( &quot;Observation space = &quot;, env.observation_space.n)
+print( &quot;Actions = &quot;, env.action_space.n)
+</code></pre>
+<ol>
+<li>Deklariramo Q tabelo</li>
+</ol>
+<pre><code class="language-python">q_table = np.zeros([env.observation_space.n, env.action_space.n])
+#q_table = np.random.uniform(low=0, high=1, size=[env.observation_space.n, env.action_space.n])
+print( &quot;Q table size = &quot;, q_table.shape)
+</code></pre>
+<ol>
+<li>Deklariramo parametre</li>
+</ol>
+<pre><code class="language-python">learning_rate = 0.1
+discount_factor = 0.95
+epochs = 60000
+epsilon = 1
+START_EPSILON_DECAYING = 1
+END_EPSILON_DECAYING = epochs//2
+epsilon_decay_value = epsilon/(END_EPSILON_DECAYING - START_EPSILON_DECAYING)
+SHOW_EVERY = 1000
+</code></pre>
+<ol>
+<li>Začnemo z učenjem z izbranim številom epoh</li>
+</ol>
+<pre><code class="language-python">for episode in range(epochs):
+    state = env.reset()
+    done = False
+
+    trial_length = 0
+</code></pre>
+<ol>
+<li>Izvedemo posamezni „sprehod čez okolje“ z izbiro akcij<ul>
+<li>raziskovanje: naključna akcija</li>
+<li>uporabo zbranega znanja: akcija z maximalno q vrednostjo</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-python">    while not done:
+
+        if (random.uniform(0, 1) &lt; epsilon): # Exploration with random action
+            action = env.action_space.sample()
+        else:                                # Use the action with the highest q-value
+            action = np.argmax(q_table[state]) 
+</code></pre>
+<ol>
+<li>Izvedemo akcijo v okolju in preberemo vrednosti novega stanja in nagrade</li>
+</ol>
+<pre><code class="language-python">        next_state, reward, done, info = env.step(action)
+</code></pre>
+<ol>
+<li>Posodobimo stanje Q tabele</li>
+</ol>
+<pre><code class="language-python">        curr_q = q_table[state, action]
+        next_max_q = np.max(q_table[next_state])
+        new_q = (1 - learning_rate) * curr_q + learning_rate * (reward + discount_factor * next_max_q)
+        q_table[state, action] = new_q
+</code></pre>
+<ol>
+<li>Posodobimo stanje</li>
+</ol>
+<pre><code class="language-python">        state = next_state
+</code></pre>
+<ol>
+<li>Shranimo dolžino trenutnega „sprehoda“</li>
+</ol>
+<pre><code class="language-python">        if episode % SHOW_EVERY == 0:
+            trial_length += 1
+</code></pre>
+<ol>
+<li>Celotna koda učenja do sedaj</li>
+</ol>
+<pre><code class="language-python">for episode in range(epochs):
+    state = env.reset()
+    done = False
+
+    trial_length = 0
+
+
+    while not done:
+        if (random.uniform(0, 1) &lt; epsilon): # Exploration with random action
+            action = env.action_space.sample()
+        else: # Use the action with the highest q-value
+            action = np.argmax(q_table[state]) 
+
+        next_state, reward, done, info = env.step(action)
+
+        curr_q = q_table[state, action]
+        next_max_q = np.max(q_table[next_state])
+        new_q = (1 - learning_rate) * curr_q + learning_rate * (reward + discount_factor * next_max_q)
+        q_table[state, action] = new_q
+
+        state = next_state
+
+        if episode % SHOW_EVERY == 0:
+            trial_length += 1
+
+    if episode % SHOW_EVERY == 0:
+        print(f'Episode: {episode:&gt;5d}, episode length: {int(trial_length):&gt;5d}')
+
+    if END_EPSILON_DECAYING &gt;= episode &gt;= START_EPSILON_DECAYING:
+        epsilon -= epsilon_decay_value
+</code></pre>
+<ol>
+<li>Testiramo naučeno Q tabelo oziroma agenta</li>
+<li>Resetiramo okolje in ga izrišemo</li>
+</ol>
+<pre><code class="language-python">print(q_table)
+
+state = env.reset()
+env.render()
+   
+done = False
+trial_length = 0
+</code></pre>
+<ul>
+<li>Izvedemo sprehod</li>
+</ul>
+<pre><code class="language-python">while not done:
+    action = np.argmax(q_table[state])
+    state, reward, done, info = env.step(action)
+    trial_length += 1
+    print(&quot; Step &quot; + str(trial_length))
+    env.render()
+    sleep(.2)
+</code></pre>
+<ol>
+<li>Več testov, da vidimo uspešnost</li>
+</ol>
+<pre><code class="language-python">lengths=[]
+for trialnum in range(1, 11):
+    state = env.reset()
+   
+    done = False
+    trial_length = 0
+    
+    while not done and trial_length &lt; 25:
+        action = np.argmax(q_table[state])
+        state, reward, done, info = env.step(action)
+        print(&quot;Trial number &quot; + str(trialnum) + &quot; Step &quot; + str(trial_length))
+        env.render()
+        sleep(.2)
+        trial_length += 1
+    lengths.append(trial_length)
+    
+    sleep(.2)
+avg_len=sum(lengths)/10
+print(avg_len)
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 
 
