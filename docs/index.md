@@ -21,5 +21,19 @@
     - Seznam možnih akcij
 - Agent
     - Strategija za izbiro najboljših akciji
+    - Izvaja in se odloča o najboljši akciji
+
 
 ![alt text](images/Picture3.png)
+
+![alt text](images/Picture4.png)
+
+## Okolje
+
+- Spodbujevalno učenje zahteva veliko ponovitev
+    - Zelo nepraktično za razvoj na robotu
+    - Učenje v simulaciji okolja -> Env
+    - Zbirka okolij -> Gym
+
+OpenAI Gym okolja za izvajanje spodbujevalnega učenja
+https://gym.openai.com/
