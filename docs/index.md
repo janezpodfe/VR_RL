@@ -2,7 +2,7 @@
 
 # Strojno učenje
 
-![alt text](/images/Picture1.png)
+![alt text](images/Picture1.png)
 
 # Spodbujevalno učenje
 
@@ -13,7 +13,7 @@
 - Prenos na dejanskega robota
 - Vodene + samostojne vaje
 
-![alt text](/images/Picture2.png)
+![alt text](images/Picture2.png)
 
 - Okolje
     - Stanje okolja
@@ -22,4 +22,4 @@
 - Agent
     - Strategija za izbiro najboljših akciji
 
-![alt text](/images/Picture3.png)
+![alt text](images/Picture3.png)
