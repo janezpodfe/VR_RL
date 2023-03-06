@@ -1,17 +1,25 @@
-# Welcome to MkDocs
+# Spodbujevalno učenje
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Strojno učenje
 
-## Commands
+![alt text](/images/Picture1.png)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+# Spodbujevalno učenje
 
-## Project layout
+- Učenje robotskih strategij v simuliranem okolju
+    - OpenAI Gym + Stable Baselines3 
+    - Preprosta okolja
+    - AirHockey
+- Prenos na dejanskega robota
+- Vodene + samostojne vaje
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+![alt text](/images/Picture2.png)
+
+- Okolje
+    - Stanje okolja
+    - Nagrada ta agenta, za določeno stanje
+    - Seznam možnih akcij
+- Agent
+    - Strategija za izbiro najboljših akciji
+
+![alt text](/images/Picture3.png)
