@@ -810,12 +810,12 @@
 </span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a>
 </span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a>    <span class="c1">#player controls</span>
 </span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span> 
-</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a>    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a>    <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a>    <span class="k">else</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a>    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a>    <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a>    <span class="k">else</span><span class="p">:</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>   
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="hll">    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="hll">    <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a>    <span class="k">else</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="hll">    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="hll">    <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a>    <span class="k">else</span><span class="p">:</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>   
 </span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26"></a>
 </span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27"></a>    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 </span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a>
@@ -823,23 +823,23 @@
 </span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30"></a>    <span class="c1">#print(action)</span>
 </span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31"></a>    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32"></a>
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="hll">    <span class="c1"># Render the environment</span>
-</span></span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="hll">    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</span></span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35"></a>
-</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="hll">    <span class="c1"># Check if the episode is finished</span>
-</span></span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="hll">    <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
-</span></span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38"></a>        <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33"></a>    <span class="c1"># Render the environment</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34"></a>    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35"></a>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36"></a>    <span class="c1"># Check if the episode is finished</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37"></a>    <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38"></a>        <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39"></a>
 </span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="c1"># Close the environment</span>
 </span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="dodajmo-osnovno-mejo">Dodajmo osnovno mejo</h3>
 <ul>
-<li><code>__init__()</code>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_border</span><span class="p">()</span>    
-</span></code></pre></div></li>
-<li><code>_render_frame()</code></li>
+<li><code>__init__()</code></li>
 </ul>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_border</span><span class="p">()</span>    
+</span></code></pre></div>
+- <code>_render_frame()</code></p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">draw_border</span><span class="p">(</span><span class="n">black</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Zaključimo episodo, če se agent dotakne meje.</p>
