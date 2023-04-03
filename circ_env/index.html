@@ -833,9 +833,22 @@
 </span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="c1"># Close the environment</span>
 </span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">):</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
+<h3 id="dodajmo-osnovno-mejo">Dodajmo osnovno mejo</h3>
+<ul>
+<li><code>__init__()</code>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_border</span><span class="p">()</span>    
+</span></code></pre></div></li>
+<li><code>_render_frame()</code></li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">draw_border</span><span class="p">(</span><span class="n">black</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Zaključimo episodo, če se agent dotakne meje.</p>
+<ul>
+<li><code>step()</code></li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">):</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
 </span></code></pre></div>
 
 
