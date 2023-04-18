@@ -991,171 +991,220 @@
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>Celotna koda verzija 2</p>
+<p>Zagon skripte</p>
 </li>
 </ol>
+<p>Ob zagonu skripte s <code>python cliff.py</code> se bo pojavila napaka</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/toy_text/cliffwalking.py:44: FutureWarning: In the future `np.bool` will be defined as the corresponding NumPy scalar.</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="go">  self._cliff = np.zeros(self.shape, dtype=np.bool)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">Traceback (most recent call last):</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="go">  File &quot;/home/student/RL/rl_pet/cliff.py&quot;, line 7, in &lt;module&gt;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="go">    env = gym.make(&#39;CliffWalking-v0&#39;)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/registration.py&quot;, line 235, in make</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="go">    return registry.make(id, **kwargs)</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/registration.py&quot;, line 129, in make</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="go">    env = spec.make(**kwargs)</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/registration.py&quot;, line 90, in make</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="go">    env = cls(**_kwargs)</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/toy_text/cliffwalking.py&quot;, line 44, in __init__</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="go">    self._cliff = np.zeros(self.shape, dtype=np.bool)</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/numpy/__init__.py&quot;, line 305, in __getattr__</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="go">    raise AttributeError(__former_attrs__[attr])</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="go">AttributeError: module &#39;numpy&#39; has no attribute &#39;bool&#39;.</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="go">`np.bool` was a deprecated alias for the builtin `bool`. To avoid this error in existing code, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="go">The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="go">    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations</span>
+</span></code></pre></div>
+<p>Najbolj informativen del so vrstice</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="go">  File &quot;/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/toy_text/cliffwalking.py&quot;, line 44, in __init__</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="go">    self._cliff = np.zeros(self.shape, dtype=np.bool)</span>
+</span></code></pre></div>
+<p>in</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="go">AttributeError: module &#39;numpy&#39; has no attribute &#39;bool&#39;.</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="go">`np.bool` was a deprecated alias for the builtin `bool`. To avoid this error in existing code, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="go">The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="go">    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations</span>
+</span></code></pre></div>
+<p>Napaka nastane, ker je v <code>cliffwalking.py</code> napaka v vrstici 44, ker se uporablja star zapis za spremenljivko <code>bool</code> in sicer zapis <code>dtype=np.bool</code>. Tega je potrebno spremeniti v samo <code>bool</code>. Potrebno je odpreti datoteko, ki se nahaja npr. v <code>/home/student/anaconda3/envs/rl_pet/lib/python3.9/site-packages/gym/envs/toy_text/cliffwalking.py</code>. Polna pot je odvisna od ime vašega python okolja, npr. <code>/rl_pet</code>. Odprite python datoteko in spremenite kodo.</p>
+<p>Stara koda
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">cliffwalking.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-43">43</a></span>
+<span class="normal"><a href="#__codelineno-20-44">44</a></span>
+<span class="normal"><a href="#__codelineno-20-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43"></a>        <span class="c1"># Cliff Location</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">_cliff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+</span></span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cliff</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Nova koda
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">cliffwalking.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-43">43</a></span>
+<span class="normal"><a href="#__codelineno-21-44">44</a></span>
+<span class="normal"><a href="#__codelineno-21-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-43"><a id="__codelineno-21-43" name="__codelineno-21-43"></a>        <span class="c1"># Cliff Location</span>
+</span><span id="__span-21-44"><a id="__codelineno-21-44" name="__codelineno-21-44"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">_cliff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</span></span><span id="__span-21-45"><a id="__codelineno-21-45" name="__codelineno-21-45"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cliff</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Celotna koda verzija 2</li>
+</ol>
 <p>V tej verziji kode je dodana predčasna zaustevative učenja za posamezno <em>epoho</em>, če učenje preseže 99 korakov učenja v posamezni <em>epohi</em>.</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">cliff.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-17-10">10</a></span>
-<span class="normal"><a href="#__codelineno-17-11">11</a></span>
-<span class="normal"><a href="#__codelineno-17-12">12</a></span>
-<span class="normal"><a href="#__codelineno-17-13">13</a></span>
-<span class="normal"><a href="#__codelineno-17-14">14</a></span>
-<span class="normal"><a href="#__codelineno-17-15">15</a></span>
-<span class="normal"><a href="#__codelineno-17-16">16</a></span>
-<span class="normal"><a href="#__codelineno-17-17">17</a></span>
-<span class="normal"><a href="#__codelineno-17-18">18</a></span>
-<span class="normal"><a href="#__codelineno-17-19">19</a></span>
-<span class="normal"><a href="#__codelineno-17-20">20</a></span>
-<span class="normal"><a href="#__codelineno-17-21">21</a></span>
-<span class="normal"><a href="#__codelineno-17-22">22</a></span>
-<span class="normal"><a href="#__codelineno-17-23">23</a></span>
-<span class="normal"><a href="#__codelineno-17-24">24</a></span>
-<span class="normal"><a href="#__codelineno-17-25">25</a></span>
-<span class="normal"><a href="#__codelineno-17-26">26</a></span>
-<span class="normal"><a href="#__codelineno-17-27">27</a></span>
-<span class="normal"><a href="#__codelineno-17-28">28</a></span>
-<span class="normal"><a href="#__codelineno-17-29">29</a></span>
-<span class="normal"><a href="#__codelineno-17-30">30</a></span>
-<span class="normal"><a href="#__codelineno-17-31">31</a></span>
-<span class="normal"><a href="#__codelineno-17-32">32</a></span>
-<span class="normal"><a href="#__codelineno-17-33">33</a></span>
-<span class="normal"><a href="#__codelineno-17-34">34</a></span>
-<span class="normal"><a href="#__codelineno-17-35">35</a></span>
-<span class="normal"><a href="#__codelineno-17-36">36</a></span>
-<span class="normal"><a href="#__codelineno-17-37">37</a></span>
-<span class="normal"><a href="#__codelineno-17-38">38</a></span>
-<span class="normal"><a href="#__codelineno-17-39">39</a></span>
-<span class="normal"><a href="#__codelineno-17-40">40</a></span>
-<span class="normal"><a href="#__codelineno-17-41">41</a></span>
-<span class="normal"><a href="#__codelineno-17-42">42</a></span>
-<span class="normal"><a href="#__codelineno-17-43">43</a></span>
-<span class="normal"><a href="#__codelineno-17-44">44</a></span>
-<span class="normal"><a href="#__codelineno-17-45">45</a></span>
-<span class="normal"><a href="#__codelineno-17-46">46</a></span>
-<span class="normal"><a href="#__codelineno-17-47">47</a></span>
-<span class="normal"><a href="#__codelineno-17-48">48</a></span>
-<span class="normal"><a href="#__codelineno-17-49">49</a></span>
-<span class="normal"><a href="#__codelineno-17-50">50</a></span>
-<span class="normal"><a href="#__codelineno-17-51">51</a></span>
-<span class="normal"><a href="#__codelineno-17-52">52</a></span>
-<span class="normal"><a href="#__codelineno-17-53">53</a></span>
-<span class="normal"><a href="#__codelineno-17-54">54</a></span>
-<span class="normal"><a href="#__codelineno-17-55">55</a></span>
-<span class="normal"><a href="#__codelineno-17-56">56</a></span>
-<span class="normal"><a href="#__codelineno-17-57">57</a></span>
-<span class="normal"><a href="#__codelineno-17-58">58</a></span>
-<span class="normal"><a href="#__codelineno-17-59">59</a></span>
-<span class="normal"><a href="#__codelineno-17-60">60</a></span>
-<span class="normal"><a href="#__codelineno-17-61">61</a></span>
-<span class="normal"><a href="#__codelineno-17-62">62</a></span>
-<span class="normal"><a href="#__codelineno-17-63">63</a></span>
-<span class="normal"><a href="#__codelineno-17-64">64</a></span>
-<span class="normal"><a href="#__codelineno-17-65">65</a></span>
-<span class="normal"><a href="#__codelineno-17-66">66</a></span>
-<span class="normal"><a href="#__codelineno-17-67">67</a></span>
-<span class="normal"><a href="#__codelineno-17-68">68</a></span>
-<span class="normal"><a href="#__codelineno-17-69">69</a></span>
-<span class="normal"><a href="#__codelineno-17-70">70</a></span>
-<span class="normal"><a href="#__codelineno-17-71">71</a></span>
-<span class="normal"><a href="#__codelineno-17-72">72</a></span>
-<span class="normal"><a href="#__codelineno-17-73">73</a></span>
-<span class="normal"><a href="#__codelineno-17-74">74</a></span>
-<span class="normal"><a href="#__codelineno-17-75">75</a></span>
-<span class="normal"><a href="#__codelineno-17-76">76</a></span>
-<span class="normal"><a href="#__codelineno-17-77">77</a></span>
-<span class="normal"><a href="#__codelineno-17-78">78</a></span>
-<span class="normal"><a href="#__codelineno-17-79">79</a></span>
-<span class="normal"><a href="#__codelineno-17-80">80</a></span>
-<span class="normal"><a href="#__codelineno-17-81">81</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">gym</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kn">import</span> <span class="nn">random</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;CliffWalking-v0&#39;</span><span class="p">)</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Observation space = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Actions = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="n">q_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">])</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="c1">#q_table = np.random.uniform(low=0, high=1, size=[env.observation_space.n, env.action_space.n])</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Q table size = &quot;</span><span class="p">,</span> <span class="n">q_table</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17"></a>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18"></a><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19"></a><span class="n">discount_factor</span> <span class="o">=</span> <span class="mf">0.95</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20"></a>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21"></a><span class="n">epochs</span> <span class="o">=</span> <span class="mi">45000</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22"></a><span class="n">max_steps</span> <span class="o">=</span> <span class="mi">99</span>
-</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23"></a>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24"></a><span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25"></a><span class="n">START_EPSILON_DECAYING</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26"></a><span class="n">END_EPSILON_DECAYING</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">//</span><span class="mi">2</span>
-</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27"></a><span class="n">epsilon_decay_value</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">/</span><span class="p">(</span><span class="n">END_EPSILON_DECAYING</span> <span class="o">-</span> <span class="n">START_EPSILON_DECAYING</span><span class="p">)</span>
-</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28"></a>
-</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29"></a><span class="n">SHOW_EVERY</span> <span class="o">=</span> <span class="mi">1000</span>
-</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30"></a>
-</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31"></a><span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32"></a>    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33"></a>    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34"></a>
-</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35"></a>    <span class="n">trial_length</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36"></a>
-</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37"></a>
-</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38"></a><span class="hll">    <span class="c1">#while not done:</span>
-</span></span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39"></a><span class="hll">    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_steps</span><span class="p">):</span>
-</span></span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">):</span> <span class="c1"># Exploration with random action</span>
-</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41"></a>            <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
-</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42"></a>        <span class="k">else</span><span class="p">:</span> <span class="c1"># Use the action with the highest q-value</span>
-</span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43"></a>            <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span> 
-</span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44"></a>
-</span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45"></a>        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-</span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46"></a>
-</span><span id="__span-17-47"><a id="__codelineno-17-47" name="__codelineno-17-47"></a>        <span class="n">curr_q</span> <span class="o">=</span> <span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span>
-</span><span id="__span-17-48"><a id="__codelineno-17-48" name="__codelineno-17-48"></a>        <span class="n">next_max_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>
-</span><span id="__span-17-49"><a id="__codelineno-17-49" name="__codelineno-17-49"></a>        <span class="n">new_q</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">learning_rate</span><span class="p">)</span> <span class="o">*</span> <span class="n">curr_q</span> <span class="o">+</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max_q</span><span class="p">)</span>
-</span><span id="__span-17-50"><a id="__codelineno-17-50" name="__codelineno-17-50"></a>        <span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_q</span>
-</span><span id="__span-17-51"><a id="__codelineno-17-51" name="__codelineno-17-51"></a>
-</span><span id="__span-17-52"><a id="__codelineno-17-52" name="__codelineno-17-52"></a>        <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
-</span><span id="__span-17-53"><a id="__codelineno-17-53" name="__codelineno-17-53"></a>
-</span><span id="__span-17-54"><a id="__codelineno-17-54" name="__codelineno-17-54"></a>        <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">SHOW_EVERY</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-17-55"><a id="__codelineno-17-55" name="__codelineno-17-55"></a>            <span class="n">trial_length</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-17-56"><a id="__codelineno-17-56" name="__codelineno-17-56"></a>
-</span><span id="__span-17-57"><a id="__codelineno-17-57" name="__codelineno-17-57"></a><span class="hll">        <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
-</span></span><span id="__span-17-58"><a id="__codelineno-17-58" name="__codelineno-17-58"></a><span class="hll">            <span class="k">break</span>
-</span></span><span id="__span-17-59"><a id="__codelineno-17-59" name="__codelineno-17-59"></a>
-</span><span id="__span-17-60"><a id="__codelineno-17-60" name="__codelineno-17-60"></a>    <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">SHOW_EVERY</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-17-61"><a id="__codelineno-17-61" name="__codelineno-17-61"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Episode: </span><span class="si">{</span><span class="n">episode</span><span class="si">:</span><span class="s1">&gt;5d</span><span class="si">}</span><span class="s1">, episode length: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">trial_length</span><span class="p">)</span><span class="si">:</span><span class="s1">&gt;5d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="__span-17-62"><a id="__codelineno-17-62" name="__codelineno-17-62"></a>
-</span><span id="__span-17-63"><a id="__codelineno-17-63" name="__codelineno-17-63"></a>    <span class="k">if</span> <span class="n">END_EPSILON_DECAYING</span> <span class="o">&gt;=</span> <span class="n">episode</span> <span class="o">&gt;=</span> <span class="n">START_EPSILON_DECAYING</span><span class="p">:</span>
-</span><span id="__span-17-64"><a id="__codelineno-17-64" name="__codelineno-17-64"></a>        <span class="n">epsilon</span> <span class="o">-=</span> <span class="n">epsilon_decay_value</span>
-</span><span id="__span-17-65"><a id="__codelineno-17-65" name="__codelineno-17-65"></a>
-</span><span id="__span-17-66"><a id="__codelineno-17-66" name="__codelineno-17-66"></a>
-</span><span id="__span-17-67"><a id="__codelineno-17-67" name="__codelineno-17-67"></a><span class="nb">print</span><span class="p">(</span><span class="n">q_table</span><span class="p">)</span>
-</span><span id="__span-17-68"><a id="__codelineno-17-68" name="__codelineno-17-68"></a>
-</span><span id="__span-17-69"><a id="__codelineno-17-69" name="__codelineno-17-69"></a><span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-</span><span id="__span-17-70"><a id="__codelineno-17-70" name="__codelineno-17-70"></a><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</span><span id="__span-17-71"><a id="__codelineno-17-71" name="__codelineno-17-71"></a>
-</span><span id="__span-17-72"><a id="__codelineno-17-72" name="__codelineno-17-72"></a><span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-17-73"><a id="__codelineno-17-73" name="__codelineno-17-73"></a><span class="n">trial_length</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-17-74"><a id="__codelineno-17-74" name="__codelineno-17-74"></a>
-</span><span id="__span-17-75"><a id="__codelineno-17-75" name="__codelineno-17-75"></a><span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-</span><span id="__span-17-76"><a id="__codelineno-17-76" name="__codelineno-17-76"></a>    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
-</span><span id="__span-17-77"><a id="__codelineno-17-77" name="__codelineno-17-77"></a>    <span class="n">state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-</span><span id="__span-17-78"><a id="__codelineno-17-78" name="__codelineno-17-78"></a>    <span class="n">trial_length</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-17-79"><a id="__codelineno-17-79" name="__codelineno-17-79"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Step &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">trial_length</span><span class="p">))</span>
-</span><span id="__span-17-80"><a id="__codelineno-17-80" name="__codelineno-17-80"></a>    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</span><span id="__span-17-81"><a id="__codelineno-17-81" name="__codelineno-17-81"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">cliff.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span>
+<span class="normal"><a href="#__codelineno-22-13">13</a></span>
+<span class="normal"><a href="#__codelineno-22-14">14</a></span>
+<span class="normal"><a href="#__codelineno-22-15">15</a></span>
+<span class="normal"><a href="#__codelineno-22-16">16</a></span>
+<span class="normal"><a href="#__codelineno-22-17">17</a></span>
+<span class="normal"><a href="#__codelineno-22-18">18</a></span>
+<span class="normal"><a href="#__codelineno-22-19">19</a></span>
+<span class="normal"><a href="#__codelineno-22-20">20</a></span>
+<span class="normal"><a href="#__codelineno-22-21">21</a></span>
+<span class="normal"><a href="#__codelineno-22-22">22</a></span>
+<span class="normal"><a href="#__codelineno-22-23">23</a></span>
+<span class="normal"><a href="#__codelineno-22-24">24</a></span>
+<span class="normal"><a href="#__codelineno-22-25">25</a></span>
+<span class="normal"><a href="#__codelineno-22-26">26</a></span>
+<span class="normal"><a href="#__codelineno-22-27">27</a></span>
+<span class="normal"><a href="#__codelineno-22-28">28</a></span>
+<span class="normal"><a href="#__codelineno-22-29">29</a></span>
+<span class="normal"><a href="#__codelineno-22-30">30</a></span>
+<span class="normal"><a href="#__codelineno-22-31">31</a></span>
+<span class="normal"><a href="#__codelineno-22-32">32</a></span>
+<span class="normal"><a href="#__codelineno-22-33">33</a></span>
+<span class="normal"><a href="#__codelineno-22-34">34</a></span>
+<span class="normal"><a href="#__codelineno-22-35">35</a></span>
+<span class="normal"><a href="#__codelineno-22-36">36</a></span>
+<span class="normal"><a href="#__codelineno-22-37">37</a></span>
+<span class="normal"><a href="#__codelineno-22-38">38</a></span>
+<span class="normal"><a href="#__codelineno-22-39">39</a></span>
+<span class="normal"><a href="#__codelineno-22-40">40</a></span>
+<span class="normal"><a href="#__codelineno-22-41">41</a></span>
+<span class="normal"><a href="#__codelineno-22-42">42</a></span>
+<span class="normal"><a href="#__codelineno-22-43">43</a></span>
+<span class="normal"><a href="#__codelineno-22-44">44</a></span>
+<span class="normal"><a href="#__codelineno-22-45">45</a></span>
+<span class="normal"><a href="#__codelineno-22-46">46</a></span>
+<span class="normal"><a href="#__codelineno-22-47">47</a></span>
+<span class="normal"><a href="#__codelineno-22-48">48</a></span>
+<span class="normal"><a href="#__codelineno-22-49">49</a></span>
+<span class="normal"><a href="#__codelineno-22-50">50</a></span>
+<span class="normal"><a href="#__codelineno-22-51">51</a></span>
+<span class="normal"><a href="#__codelineno-22-52">52</a></span>
+<span class="normal"><a href="#__codelineno-22-53">53</a></span>
+<span class="normal"><a href="#__codelineno-22-54">54</a></span>
+<span class="normal"><a href="#__codelineno-22-55">55</a></span>
+<span class="normal"><a href="#__codelineno-22-56">56</a></span>
+<span class="normal"><a href="#__codelineno-22-57">57</a></span>
+<span class="normal"><a href="#__codelineno-22-58">58</a></span>
+<span class="normal"><a href="#__codelineno-22-59">59</a></span>
+<span class="normal"><a href="#__codelineno-22-60">60</a></span>
+<span class="normal"><a href="#__codelineno-22-61">61</a></span>
+<span class="normal"><a href="#__codelineno-22-62">62</a></span>
+<span class="normal"><a href="#__codelineno-22-63">63</a></span>
+<span class="normal"><a href="#__codelineno-22-64">64</a></span>
+<span class="normal"><a href="#__codelineno-22-65">65</a></span>
+<span class="normal"><a href="#__codelineno-22-66">66</a></span>
+<span class="normal"><a href="#__codelineno-22-67">67</a></span>
+<span class="normal"><a href="#__codelineno-22-68">68</a></span>
+<span class="normal"><a href="#__codelineno-22-69">69</a></span>
+<span class="normal"><a href="#__codelineno-22-70">70</a></span>
+<span class="normal"><a href="#__codelineno-22-71">71</a></span>
+<span class="normal"><a href="#__codelineno-22-72">72</a></span>
+<span class="normal"><a href="#__codelineno-22-73">73</a></span>
+<span class="normal"><a href="#__codelineno-22-74">74</a></span>
+<span class="normal"><a href="#__codelineno-22-75">75</a></span>
+<span class="normal"><a href="#__codelineno-22-76">76</a></span>
+<span class="normal"><a href="#__codelineno-22-77">77</a></span>
+<span class="normal"><a href="#__codelineno-22-78">78</a></span>
+<span class="normal"><a href="#__codelineno-22-79">79</a></span>
+<span class="normal"><a href="#__codelineno-22-80">80</a></span>
+<span class="normal"><a href="#__codelineno-22-81">81</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kn">import</span> <span class="nn">gym</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="kn">import</span> <span class="nn">random</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;CliffWalking-v0&#39;</span><span class="p">)</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Observation space = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Actions = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13"></a>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="n">q_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">])</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15"></a><span class="c1">#q_table = np.random.uniform(low=0, high=1, size=[env.observation_space.n, env.action_space.n])</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Q table size = &quot;</span><span class="p">,</span> <span class="n">q_table</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17"></a>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18"></a><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19"></a><span class="n">discount_factor</span> <span class="o">=</span> <span class="mf">0.95</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20"></a>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21"></a><span class="n">epochs</span> <span class="o">=</span> <span class="mi">45000</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22"></a><span class="n">max_steps</span> <span class="o">=</span> <span class="mi">99</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23"></a>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24"></a><span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25"></a><span class="n">START_EPSILON_DECAYING</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26"></a><span class="n">END_EPSILON_DECAYING</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27"></a><span class="n">epsilon_decay_value</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">/</span><span class="p">(</span><span class="n">END_EPSILON_DECAYING</span> <span class="o">-</span> <span class="n">START_EPSILON_DECAYING</span><span class="p">)</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28"></a>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29"></a><span class="n">SHOW_EVERY</span> <span class="o">=</span> <span class="mi">1000</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30"></a>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31"></a><span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32"></a>    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33"></a>    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34"></a>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35"></a>    <span class="n">trial_length</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36"></a>
+</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37"></a>
+</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38"></a><span class="hll">    <span class="c1">#while not done:</span>
+</span></span><span id="__span-22-39"><a id="__codelineno-22-39" name="__codelineno-22-39"></a><span class="hll">    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_steps</span><span class="p">):</span>
+</span></span><span id="__span-22-40"><a id="__codelineno-22-40" name="__codelineno-22-40"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">):</span> <span class="c1"># Exploration with random action</span>
+</span><span id="__span-22-41"><a id="__codelineno-22-41" name="__codelineno-22-41"></a>            <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+</span><span id="__span-22-42"><a id="__codelineno-22-42" name="__codelineno-22-42"></a>        <span class="k">else</span><span class="p">:</span> <span class="c1"># Use the action with the highest q-value</span>
+</span><span id="__span-22-43"><a id="__codelineno-22-43" name="__codelineno-22-43"></a>            <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span> 
+</span><span id="__span-22-44"><a id="__codelineno-22-44" name="__codelineno-22-44"></a>
+</span><span id="__span-22-45"><a id="__codelineno-22-45" name="__codelineno-22-45"></a>        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span><span id="__span-22-46"><a id="__codelineno-22-46" name="__codelineno-22-46"></a>
+</span><span id="__span-22-47"><a id="__codelineno-22-47" name="__codelineno-22-47"></a>        <span class="n">curr_q</span> <span class="o">=</span> <span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span>
+</span><span id="__span-22-48"><a id="__codelineno-22-48" name="__codelineno-22-48"></a>        <span class="n">next_max_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>
+</span><span id="__span-22-49"><a id="__codelineno-22-49" name="__codelineno-22-49"></a>        <span class="n">new_q</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">learning_rate</span><span class="p">)</span> <span class="o">*</span> <span class="n">curr_q</span> <span class="o">+</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max_q</span><span class="p">)</span>
+</span><span id="__span-22-50"><a id="__codelineno-22-50" name="__codelineno-22-50"></a>        <span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_q</span>
+</span><span id="__span-22-51"><a id="__codelineno-22-51" name="__codelineno-22-51"></a>
+</span><span id="__span-22-52"><a id="__codelineno-22-52" name="__codelineno-22-52"></a>        <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+</span><span id="__span-22-53"><a id="__codelineno-22-53" name="__codelineno-22-53"></a>
+</span><span id="__span-22-54"><a id="__codelineno-22-54" name="__codelineno-22-54"></a>        <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">SHOW_EVERY</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-22-55"><a id="__codelineno-22-55" name="__codelineno-22-55"></a>            <span class="n">trial_length</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-22-56"><a id="__codelineno-22-56" name="__codelineno-22-56"></a>
+</span><span id="__span-22-57"><a id="__codelineno-22-57" name="__codelineno-22-57"></a><span class="hll">        <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+</span></span><span id="__span-22-58"><a id="__codelineno-22-58" name="__codelineno-22-58"></a><span class="hll">            <span class="k">break</span>
+</span></span><span id="__span-22-59"><a id="__codelineno-22-59" name="__codelineno-22-59"></a>
+</span><span id="__span-22-60"><a id="__codelineno-22-60" name="__codelineno-22-60"></a>    <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">SHOW_EVERY</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-22-61"><a id="__codelineno-22-61" name="__codelineno-22-61"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Episode: </span><span class="si">{</span><span class="n">episode</span><span class="si">:</span><span class="s1">&gt;5d</span><span class="si">}</span><span class="s1">, episode length: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">trial_length</span><span class="p">)</span><span class="si">:</span><span class="s1">&gt;5d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-22-62"><a id="__codelineno-22-62" name="__codelineno-22-62"></a>
+</span><span id="__span-22-63"><a id="__codelineno-22-63" name="__codelineno-22-63"></a>    <span class="k">if</span> <span class="n">END_EPSILON_DECAYING</span> <span class="o">&gt;=</span> <span class="n">episode</span> <span class="o">&gt;=</span> <span class="n">START_EPSILON_DECAYING</span><span class="p">:</span>
+</span><span id="__span-22-64"><a id="__codelineno-22-64" name="__codelineno-22-64"></a>        <span class="n">epsilon</span> <span class="o">-=</span> <span class="n">epsilon_decay_value</span>
+</span><span id="__span-22-65"><a id="__codelineno-22-65" name="__codelineno-22-65"></a>
+</span><span id="__span-22-66"><a id="__codelineno-22-66" name="__codelineno-22-66"></a>
+</span><span id="__span-22-67"><a id="__codelineno-22-67" name="__codelineno-22-67"></a><span class="nb">print</span><span class="p">(</span><span class="n">q_table</span><span class="p">)</span>
+</span><span id="__span-22-68"><a id="__codelineno-22-68" name="__codelineno-22-68"></a>
+</span><span id="__span-22-69"><a id="__codelineno-22-69" name="__codelineno-22-69"></a><span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-22-70"><a id="__codelineno-22-70" name="__codelineno-22-70"></a><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</span><span id="__span-22-71"><a id="__codelineno-22-71" name="__codelineno-22-71"></a>
+</span><span id="__span-22-72"><a id="__codelineno-22-72" name="__codelineno-22-72"></a><span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-22-73"><a id="__codelineno-22-73" name="__codelineno-22-73"></a><span class="n">trial_length</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-22-74"><a id="__codelineno-22-74" name="__codelineno-22-74"></a>
+</span><span id="__span-22-75"><a id="__codelineno-22-75" name="__codelineno-22-75"></a><span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+</span><span id="__span-22-76"><a id="__codelineno-22-76" name="__codelineno-22-76"></a>    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
+</span><span id="__span-22-77"><a id="__codelineno-22-77" name="__codelineno-22-77"></a>    <span class="n">state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span><span id="__span-22-78"><a id="__codelineno-22-78" name="__codelineno-22-78"></a>    <span class="n">trial_length</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-22-79"><a id="__codelineno-22-79" name="__codelineno-22-79"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Step &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">trial_length</span><span class="p">))</span>
+</span><span id="__span-22-80"><a id="__codelineno-22-80" name="__codelineno-22-80"></a>    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</span><span id="__span-22-81"><a id="__codelineno-22-81" name="__codelineno-22-81"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
 
