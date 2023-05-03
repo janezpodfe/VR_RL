@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../cart/">
+      
+      
+        <link rel="next" href="../playCirc_mouse/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
@@ -471,14 +475,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
       
@@ -487,7 +493,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Circle Environment
@@ -498,11 +504,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../circ_env_slo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Okolje Circle Envrionment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Okolje Circle Envrionment
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#libraries-used" class="md-nav__link">
+    Libraries Used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-used" class="md-nav__link">
+    Variables Used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-gym-functions-used" class="md-nav__link">
+    Standard gym functions Used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    Custom functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -696,8 +764,8 @@
 
 
 <h1 id="okolje-circle-envrionment">Okolje Circle Envrionment</h1>
-<p>This Python code defines a custom environment for the OpenAI Gym toolkit. The environment is a rectangular, and an agent in the form of a circle can move within it. The agent is required to avoid colliding with the boundary of the world. The agent's movement and collision with the environment are simulated using the Pybox2D and Pygame libraries.</p>
-<p>The environment is defined in a Python class named <code>CircleEnvironment</code> that inherits from the <code>gym.Env</code> class. The class defines several functions, including the <code>__init__()</code>, <code>reset()</code>, <code>step()</code>, <code>render()</code>, and <code>close()</code> functions, that are part of the OpenAI Gym environment API.</p>
+<p>Sledeča Python koda definira novo okolje za orodje OpenAI Gym. Okolje je pravokotno, agent v obliki kroga pa se lahko giblje v njem. Agent se mora izogibati trkom s steno oziroma mejo okolja. Gibanje agenta in trki v okolju so simulirani z uporabo knjižnic Pybox2D in prikazani s knjižnjico Pygame.</p>
+<p>Okolje je definirano kot Python razred <code>CircleEnvironment</code>, ki deduje iz razreda <code>gym.Env</code>. Razred definira več funkcij, vključno s funkcijami <code>__init__()</code>, <code>reset()</code>, <code>step()</code>, <code>render()</code> in <code>close()</code>, ki so del API okolja OpenAI Gym.</p>
 <h2 id="libraries-used">Libraries Used</h2>
 <p>The code imports the following libraries:</p>
 <ul>
