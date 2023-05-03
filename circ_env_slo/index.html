@@ -997,7 +997,7 @@
 <p><code>create_puck(radius_px, type)</code>: Creates a new b2Body object representing the puck. It takes in the radius of the puck in pixels, <code>radius_px</code>, and a string <code>type</code> that indicates whether the puck should be a dynamic object ('d') or a kinematic object ('k').</p>
 </li>
 <li>
-<p><code>create_goal(dim_px, position)</code>: Creates a new b2Body object representing the goal. It takes in a tuple dim_px representing the dimensions of the goal in pixels, and a tuple position representing the position of the goal in the simulation.</p>
+<p><code>create_goal(dim_px, position)</code>: Creates a new b2Body object representing the goal. It takes in a tuple <code>dim_px</code>representing the dimensions of the goal in pixels, and a tuple <code>position</code> representing the position of the goal in the simulation.</p>
 </li>
 <li>
 <p><code>create_circ_target(radius_px)</code>: Creates a new circular target. It takes in the radius of the target in pixels, radius_px.</p>
@@ -1039,6 +1039,9 @@
 <p><code>set_puck_velocity(vel)</code>: This function sets the linear and angular velocity of the puck in the Box2D world. The input parameter vel is a tuple containing the x and y components of the velocity. The velocity is converted to a b2Vec2 object before being assigned to the puck.</p>
 </li>
 <li>
+<p><code>limit_puck_velocity(maximal_velocity)</code>: This function limits the velocity of a puck object to the maximum velocity specified by <code>maximal_velocity</code>. The function takes a single input parameter, <code>maximal_velocity</code>, which is a float value representing the maximum velocity allowed. The function does not return any values.</p>
+</li>
+<li>
 <p><code>draw_agent(color)</code>: This function draws the agent as a circle on the Pygame screen. The input parameter color is a tuple containing the RGB values of the color. The position of the agent is converted to Pygame coordinates before drawing.</p>
 </li>
 <li>
@@ -1066,7 +1069,10 @@
 <p><code>unit_vector(pos1, pos2)</code>: This function calculates the unit vector pointing from pos1 to pos2. The input parameters pos1 and pos2 are tuples containing the x and y coordinates of the points. The function returns the unit vector as a numpy array.</p>
 </li>
 <li>
-<p><code>calculate_scaled_component(pos_agent, pos_target, vel)</code>: This function calculates the scaled component of the velocity vector in the direction of the unit vector pointing from pos_agent to pos_target. The input parameters pos_agent and pos_target are tuples containing the x and y coordinates of the points. The input parameter vel is a tuple containing the x and y components of the velocity vector. The function returns the scaled component as a float value.</p>
+<p><code>calculate_component(pos_agent, pos_target, vel)</code>: This function calculates the component of the velocity <code>vel</code> in the direction of the unit vector pointing from <code>pos_agent</code> to <code>pos_target</code>. The input parameters <code>pos_agent</code> and <code>pos_target</code> are tuples containing the x and y coordinates of the points, while <code>vel</code> is a numpy array representing the velocity vector. The function returns the component of <code>vel</code> as a float value.</p>
+</li>
+<li>
+<p><code>move_agent_mouse()</code>: This function calculates the movement action of the agent based on the position of the mouse relative to the agent's position. The function returns the <code>action</code> as a numpy array.</p>
 </li>
 </ul>
 <h2 id="koda">Koda</h2>
