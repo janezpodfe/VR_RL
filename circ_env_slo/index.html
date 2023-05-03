@@ -540,29 +540,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#libraries-used" class="md-nav__link">
-    Libraries Used
+  <a href="#uporabljene-funkcije" class="md-nav__link">
+    Uporabljene funkcije
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-used" class="md-nav__link">
-    Variables Used
+  <a href="#spremenljivke" class="md-nav__link">
+    Spremenljivke
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard-gym-functions-used" class="md-nav__link">
-    Standard gym functions Used
+  <a href="#uporabljene-standardne-gym-funkcije" class="md-nav__link">
+    Uporabljene standardne gym funkcije
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-functions" class="md-nav__link">
-    Custom functions
+  <a href="#dodatne-funkcije" class="md-nav__link">
+    Dodatne funkcije
   </a>
   
 </li>
@@ -721,29 +721,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#libraries-used" class="md-nav__link">
-    Libraries Used
+  <a href="#uporabljene-funkcije" class="md-nav__link">
+    Uporabljene funkcije
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-used" class="md-nav__link">
-    Variables Used
+  <a href="#spremenljivke" class="md-nav__link">
+    Spremenljivke
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard-gym-functions-used" class="md-nav__link">
-    Standard gym functions Used
+  <a href="#uporabljene-standardne-gym-funkcije" class="md-nav__link">
+    Uporabljene standardne gym funkcije
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-functions" class="md-nav__link">
-    Custom functions
+  <a href="#dodatne-funkcije" class="md-nav__link">
+    Dodatne funkcije
   </a>
   
 </li>
@@ -766,7 +766,7 @@
 <h1 id="okolje-circle-envrionment">Okolje Circle Envrionment</h1>
 <p>Sledeča Python koda definira novo okolje za orodje OpenAI Gym. Okolje je pravokotno, agent v obliki kroga pa se lahko giblje v njem. Agent se mora izogibati trkom s steno oziroma mejo okolja. Gibanje agenta in trki v okolju so simulirani z uporabo knjižnic Pybox2D in prikazani s knjižnjico Pygame.</p>
 <p>Okolje je definirano kot Python razred <code>CircleEnvironment</code>, ki deduje iz razreda <code>gym.Env</code>. Razred definira več funkcij, vključno s funkcijami <code>__init__()</code>, <code>reset()</code>, <code>step()</code>, <code>render()</code> in <code>close()</code>, ki so del API okolja OpenAI Gym.</p>
-<h2 id="libraries-used">Libraries Used</h2>
+<h2 id="uporabljene-funkcije">Uporabljene funkcije</h2>
 <p>The code imports the following libraries:</p>
 <ul>
 <li><strong><code>gym</code></strong>: an open-source toolkit for developing and comparing reinforcement learning algorithms. OpenAI Gym is a toolkit for developing and comparing reinforcement learning algorithms. It provides a set of environments for testing and training reinforcement learning agents, as well as standardized interfaces for interacting with those environments.</li>
@@ -775,7 +775,7 @@
 <li><strong><code>pygame</code></strong>: a library for game development with Python. Pygame is a cross-platform set of Python modules designed for writing video games. It includes functionality to handle graphics, sound, input devices, and networking. Pygame can be used to create simple 2D games or more complex games with physics and AI.</li>
 <li><strong><code>Box2D</code></strong>: a 2D physics engine for game development. Box2D is a 2D physics engine for simulations of physical systems. It can be used for simulations in games, robotics, computer vision, and other fields. It provides realistic simulation of collisions, forces, friction, and other physical interactions between objects in a 2D space.</li>
 </ul>
-<h2 id="variables-used">Variables Used</h2>
+<h2 id="spremenljivke">Spremenljivke</h2>
 <p>The environment uses the following variables:</p>
 <ul>
 <li><code>PPM</code>: the number of pixels per meter used for rendering the environment.</li>
@@ -786,7 +786,7 @@
 <li><code>metadata</code>: a dictionary that contains metadata about the environment, including the available render modes and the target render frame rate.</li>
 <li><code>contact_listener</code>: an instance of a custom contact listener class that is used to detect collisions between the agent and the environment.</li>
 </ul>
-<h2 id="standard-gym-functions-used">Standard <strong><code>gym</code></strong> functions Used</h2>
+<h2 id="uporabljene-standardne-gym-funkcije">Uporabljene standardne <strong><code>gym</code></strong> funkcije</h2>
 <p>The environment uses the following functions:</p>
 <ul>
 <li><code>__init__()</code>: the initialization function for the environment. It sets up the environment parameters, initializes the Pybox2D world, and sets the observation and action spaces.</li>
@@ -797,7 +797,7 @@
 <li><code>_render_frame()</code>: a function that renders a single frame of the environment.</li>
 <li><code>close()</code>: a function that destroys the Pybox2D world and the agent, and closes the Pygame window.</li>
 </ul>
-<h2 id="custom-functions">Custom functions</h2>
+<h2 id="dodatne-funkcije">Dodatne funkcije</h2>
 <ul>
 <li>
 <p><code>_is_collision(object, goal)</code>: Checks if there is a collision between the body object and the body goal. It takes in two b2Body objects, object and goal, and returns a boolean indicating whether there is a collision. It can take any two <code>Box2D</code> b2Body objects to check collison between them and not just body object and the body goal.</p>
