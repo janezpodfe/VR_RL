@@ -12,7 +12,7 @@
         <link rel="prev" href="../cart/">
       
       
-        <link rel="next" href="../playCirc_mouse/">
+        <link rel="next" href="../move_agent_mouse/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
@@ -683,20 +683,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../playCirc_mouse/" class="md-nav__link">
-        Skripta playCirc.py za premike z miško
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../move_agent_mouse/" class="md-nav__link">
         Premik agenta z miško
       </a>
@@ -983,8 +969,8 @@
 <li><code>PPM</code>: število slikovnih pik na meter, uporabljenih za prikaz okolja.</li>
 <li><code>TARGET_FPS</code>: hitrost osveževanja slike, ki se uporablja za prikaz okolja.</li>
 <li><code>TIME_STEP</code>: dolžina trajanja posameznega časovnega koraka simulacije.</li>
-<li><code>WORLD_WIDTH</code>: the width of the circular world in simulation units [<em>m</em>].</li>
-<li><code>WORLD_HEIGHT</code>: the height of the circular world in simulation units [<em>m</em>].</li>
+<li><code>WORLD_WIDTH</code>: širina okolja v <code>Box2D</code> simulacijskih enotah [<em>m</em>].</li>
+<li><code>WORLD_HEIGHT</code>: višina okolja v <code>Box2D</code> simulacijskih enotah [<em>m</em>].</li>
 <li><code>metadata</code>: a dictionary that contains metadata about the environment, including the available render modes and the target render frame rate.</li>
 <li><code>contact_listener</code>: an instance of a custom contact listener class that is used to detect collisions between the agent and the environment.</li>
 </ul>
