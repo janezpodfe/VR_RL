@@ -417,9 +417,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Uporaba drugih algoritmov za učenje
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Uporaba drugih algoritmov za učenje
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-ucenje-agenta-z-qrdqn-algoritmom" class="md-nav__link">
+    Python skripta za učenje agenta z QRDQN algoritmom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ppo-algoritem" class="md-nav__link">
+    PPO algoritem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -648,6 +686,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-ucenje-agenta-z-qrdqn-algoritmom" class="md-nav__link">
+    Python skripta za učenje agenta z QRDQN algoritmom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ppo-algoritem" class="md-nav__link">
+    PPO algoritem
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -676,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="python-skripta-za-ucenje-agenta-z-qrdqn-algoritmom">Python skripta za učenje agenta z QRDQN algoritmom</h1>
+<h2 id="python-skripta-za-ucenje-agenta-z-qrdqn-algoritmom">Python skripta za učenje agenta z QRDQN algoritmom</h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">carQRDQN.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -753,7 +813,7 @@
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="n">TIMESTEPS</span><span class="p">,</span> <span class="n">reset_num_timesteps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tb_log_name</span><span class="o">=</span><span class="s2">&quot;QRDQN&quot;</span><span class="p">)</span>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">models_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">TIMESTEPS</span><span class="o">*</span><span class="n">iters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h1 id="ppo-algoritem">PPO algoritem</h1>
+<h2 id="ppo-algoritem">PPO algoritem</h2>
 <p><a href="https://huggingface.co/sb3/ppo-MountainCar-v0">Primer 1</a>
 <a href="https://huggingface.co/HumanCompatibleAI/ppo-seals-MountainCar-v0">Primer 2</a></p>
 
