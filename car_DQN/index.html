@@ -414,22 +414,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#globoko-spodbujevalno-ucenje" class="md-nav__link">
+    Globoko spodbujevalno učenje
+  </a>
+  
+    <nav class="md-nav" aria-label="Globoko spodbujevalno učenje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#dqn" class="md-nav__link">
     DQN
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ppo" class="md-nav__link">
     PPO
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#a2c" class="md-nav__link">
     A2C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prakticna-uporaba" class="md-nav__link">
+    Praktična uporaba
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-ucenje-agenta" class="md-nav__link">
+    Python skripta za učenje agenta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-testiranje-agenta" class="md-nav__link">
+    Python skripta za testiranje agenta
   </a>
   
 </li>
@@ -700,22 +734,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#globoko-spodbujevalno-ucenje" class="md-nav__link">
+    Globoko spodbujevalno učenje
+  </a>
+  
+    <nav class="md-nav" aria-label="Globoko spodbujevalno učenje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#dqn" class="md-nav__link">
     DQN
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ppo" class="md-nav__link">
     PPO
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#a2c" class="md-nav__link">
     A2C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prakticna-uporaba" class="md-nav__link">
+    Praktična uporaba
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-ucenje-agenta" class="md-nav__link">
+    Python skripta za učenje agenta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripta-za-testiranje-agenta" class="md-nav__link">
+    Python skripta za testiranje agenta
   </a>
   
 </li>
@@ -736,9 +804,10 @@
 
 
 <h1 id="ucenje-z-nevronskimi-mrezami-z-metodo-dqn">Učenje z nevronskimi mrežami z metodo DQN</h1>
+<h2 id="globoko-spodbujevalno-ucenje">Globoko spodbujevalno učenje</h2>
 <p><img alt="alt text" src="https://spinningup.openai.com/en/latest/_images/rl_algorithms_9_15.svg" /></p>
 <p><a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html</a></p>
-<h2 id="dqn">DQN</h2>
+<h3 id="dqn">DQN</h3>
 <p>Q-učenje je algoritma za spodbujevalno učenje, ki uporablja tabelo za shranjevanje vrednosti Q za vsak par stanje-akcija. Ker pa prostor stanj postaja vse večji in kompleksnejši, postane shranjevanje vseh vrednosti Q v tabeli nepraktično. Tu pride na vrsto DQN.</p>
 <p>DQN je vrsta algoritma za Q-učenje, ki za izračun (približka) vrednosti Q uporablja nevronsko mrežo. Nevronska mreža sprejme stanje kot vhod in kot izhod izračuna vrednosti Q za vsako možno akcijo. Mreža je naučena s kombinacijo ponovitve izkušenj in »target« nevronske mreže za izboljšanje stabilnosti in učinkovitosti.</p>
 <blockquote>
@@ -748,14 +817,14 @@
 <p>Najprej začnemo z vhodnim stanjem kor vhodom v nevronsko mrežo. Mreža nato vrne vrednosti Q za vsako možno akcijo. Podobno kot pri Q-učenju ne izberemo akcije z najvišjo vrednostjo Q. Namesto tega uporabimo tehniko, imenovano "epsilon-greedy exploration", kjer z verjetnostjo epsilon izberemo naključno akcijo in z verjetnostjo 1-epsilon izberemo akcijo z najvišjo vrednostjo Q. To algoritmu omogoča, da raziskuje nove akcije in potencialno najde boljše rešitve. Ko izberemo akcijo, jo izvedemo in opazujemo dobljeno nagrado in novo stanje. Ta izkušnja se shrani v spomin za ponovitev, ki ga bomo pozneje uporabili za učenje mreže.</p>
 <p>Nato naključno izberemo serijo izkušenj iz spomina in jih uporabimo za učenje mreže. Vendar mreže ne želimo vedno znova učiti na istih izkušnjah, saj to lahko privede do pojava »overfitting«. Za rešitev te težave uporabimo »target« nevronsko mrežo, ki je kopija glavnega nevronske mreže, vendar z zamrznjenimi parametri. To »target« nevronsko mrežo uporabimo za izračun končnih vrednosti Q za vsako izkušnjo, nato pa posodobimo parametre glavne mreže, da čim bolj zmanjšamo razliko med napovedanimi vrednostmi Q in končnimi vrednostmi Q. Ta postopek se ponavlja iterativno, pri čemer nevronska mreža nenehno izboljšuje svoje ocene vrednosti Q, ko se uči iz izkušenj.</p>
 <p>Če povzamemo, je DQN vrsta algoritma za Q-učenje, ki za oceno vrednosti Q uporablja nevronsko mrežo. Združuje ponovitev izkušenj in »target« nevronsko mrežo za izboljšanje stabilnosti in učinkovitosti. Z uporabo te metode lahko obravnavamo večje in bolj zapletene prostore stanj ter na koncu dosežemo boljše rezultate kot z Q-metodo.</p>
-<h2 id="ppo">PPO</h2>
+<h3 id="ppo">PPO</h3>
 <p>DQN (Deep Q-Network) in PPO (Proximal Policy Optimization) sta priljubljeni metodi za spodbujevalno učenje, ki se uporabljata za učenje agentov za izvajanje določenih nalog. Vendar se razlikujeta glede na pristop in cilje. DQN je na vrednosti temelječa metoda spodbujevalnega učenja, ki uči vrednosti Q (pričakovane prihodnje nagrade) za vsak par stanje-akcija. Cilj DQN je naučiti se optimalno funkcijo Q, ki povezuje stanja z akcijami. To dosežemo z učenjem globoke nevronske mreže za oceno vrednosti Q z uporabo kombinacije ponovitve izkušenj in »target« nevronske mreže.</p>
 <p>PPO pa je metoda spodbujevalnega učenja na podlagi strategije, ki se neposredno uči strategija za preslikavo iz stanj v akcije. Cilj PPO je maksimizirati pričakovano kumulativno nagrado agenta z iskanjem optimalne strategije. To se doseže z optimizacijo nadomestne objektivne funkcije, ki zagotavlja, da se nova strategija ne razlikuje preveč od stare.</p>
 <p>Čeprav se lahko tako DQN kot PPO uporabljata za diskretne in zvezne prostore akcij, se razlikujeta po učinkovitosti vzorčenja, stabilnosti in enostavnosti izvajanja.</p>
 <p>DQN je na splošno manj vzorčno učinkovit kot PPO, saj za učenje natančne funkcije Q potrebuje veliko število učnih vzorcev. Vendar je DQN znana po svoji stabilnosti in se uspešno uporablja v številnih aplikacijah, tudi v robotiki.</p>
 <p>Po drugi strani pa je PPO znana po svoji učinkovitosti vzorčenja in je dokazano dosegla vrhunske rezultate pri številnih nalogah zveznega vodenja. PPO je tudi razmeroma enostavna za izvajanje, saj ne potrebuje ponovitve izkušenj ali ločene »target« nevronske mreže.</p>
 <p>Čeprav sta DQN in PPO zmogljivi metodi učenja za spodbujevalno učenje, se razlikujeta po pristopu in ciljih. DQN je metoda, ki temelji na vrednosti in se uči optimalne funkcije Q, PPO pa je metoda, ki temelji na strategiji in se neposredno uči optimalne strategije. </p>
-<h2 id="a2c">A2C</h2>
+<h3 id="a2c">A2C</h3>
 <p>A2C pa je metoda spodbujevalnega učenja, ki temelji na strategiji in se neposredno uči strategije (preslikava med stanji in akcijami). Cilj A2C je maksimizirati pričakovano kumulativno nagrado agenta z iskanjem optimalne strategije, podobno kot PPO. To se doseže s hkratnim učenjem dveh nevronskih mrež: »actor« nevronska mreža, ki aproksimira strategijo, in »critic« nevronske mreže, ki ocenjuje funkcijo vrednosti.</p>
 <p>Ključna razlika med DQN in A2C je, da je DQN metoda »off-policy”, kar pomeni, da se uči optimalne vrednosti Q z uporabo ločene strategije, medtem ko je A2C metoda »on-policy”, kar pomeni, da se uči strategije in funkcije vrednosti neposredno iz trenutne strategije.</p>
 <p>Druga razlika je, da se DQN lahko uporablja tako za diskretne kot za zvezne prostore akcij, medtem ko se A2C običajno uporablja za diskretne prostore akcij. Poleg tega je A2C na splošno bolj vzorčno učinkovita kot DQN, saj se lahko uči iz delnih trajektorij, medtem ko DQN za posodobitev svojih vrednosti Q potrebuje celotne trajektorije.</p>
@@ -773,7 +842,7 @@
 <p>Eden od načinov za oceno funkcije prednosti je uporaba napake TD (napake časovne razlike) med ocenjeno funkcijo vrednosti in opazovano nagrado. To lahko storimo z metodo, imenovano enostopenjsko učenje TD (temporal difference), ki v vsakem časovnem koraku posodobi funkcijo vrednosti in “advantage” funkcijo. Drug pristop je uporaba natančnejše ocene “advantage” funkcije, kot je posplošena ocena prednosti (GAE), ki združuje več časovnih korakov, da zagotovi stabilnejšo oceno “advantage” funkcije.</p>
 <p>“Advantage” funkcija je ključen gradnik algoritmov spodbujevalnega učenja, ki se uporablja za oceno kakovosti vsake akcije agenta. Agentu omogoča, da se nauči, katere akcije so boljše od drugih, ter ustrezno posodobi strategijo in funkcijo vrednosti.</p>
 </blockquote>
-<h1 id="prakticna-uporaba">Praktična uporaba</h1>
+<h2 id="prakticna-uporaba">Praktična uporaba</h2>
 <ul>
 <li>Učenje z nevronskimi mrežami z metodo DQN</li>
 <li>Uporabimo python paket Stable Baselines3 (SB3)</li>
@@ -799,7 +868,7 @@
 <img alt="alt text" src="../images/Picture8b.png" /></p>
 <p><em>Aproksimacija Q tabele z nevronsko mrežo</em>
 <img alt="alt text" src="../images/Picture9.png" /></p>
-<h1 id="python-skripta-za-ucenje-agenta">Python skripta za učenje agenta</h1>
+<h2 id="python-skripta-za-ucenje-agenta">Python skripta za učenje agenta</h2>
 <ol>
 <li>Nova python skripta</li>
 <li>
@@ -850,7 +919,7 @@
 </span></code></pre></div>
 </li>
 </ol>
-<h1 id="python-skripta-za-testiranje-agenta">Python skripta za testiranje agenta</h1>
+<h2 id="python-skripta-za-testiranje-agenta">Python skripta za testiranje agenta</h2>
 <ol>
 <li>Nova python skripta</li>
 <li>
