@@ -670,22 +670,22 @@
 <p>Po spodnjem algoritmu napišite kodo za izračun hitrosti paka.</p>
 <p><img alt="alt text" src="../images/puck_vel.PNG" /></p>
 <p>Razlaga algoritma
-1. Nastavite K na 2000 in B na 0.5
-2. Nastavite m na 1
-3. Pridobite položaj agenta in ga shranite v pos_a
-4. Pridobite položaj paka in ga shranite v pos_p
-5. Izračunajte razdaljo med agentom in pakom kot (agent_radius+object_radius) - calc_distance(pos_a, pos_p) in jo shranite v dist
-6. Ustvari spremenljivko FK z ničlami z enakimi dimenzijami kot pos_p
-7. Če je dist &gt; 0, potem nastavite 
-8. smer kot enotski vektor razlike med pos_a in pos_p in 
-9. nastavite FK kot K krat dist krat smer
-10. Pridobite hitrost ploščka in jo shranite v vel_p
-11. Nastavite FB kot -B krat vel_p
-12. Ustvari spremenljivko F z ničel z enakimi dimenzijami kot pos_p
-13. Ustvari spremenljivko acc z ničlami, ki ima enake dimenzije kot pos_p
-14. Nastavite F kot vsoto FK in FB
-15. Nastavite acc kot F, deljeno z m
-16. Posodobite hitrost ploščka tako, da jo nastavite na vel_p plus acc krat TIME_STEP</p>
+  1. Nastavite K na 2000 in B na 0.5
+  2. Nastavite m na 1
+  3. Pridobite položaj agenta in ga shranite v pos_a
+  4. Pridobite položaj paka in ga shranite v pos_p
+  5. Izračunajte razdaljo med agentom in pakom kot (agent_radius+object_radius) - calc_distance(pos_a, pos_p) in jo shranite v dist
+  6. Ustvari spremenljivko FK z ničlami z enakimi dimenzijami kot pos_p
+  7. Če je dist &gt; 0, potem nastavite 
+  8. smer kot enotski vektor razlike med pos_a in pos_p in 
+  9. nastavite FK kot K krat dist krat smer
+  10. Pridobite hitrost ploščka in jo shranite v vel_p
+  11. Nastavite FB kot -B krat vel_p
+  12. Ustvari spremenljivko F z ničel z enakimi dimenzijami kot pos_p
+  13. Ustvari spremenljivko acc z ničlami, ki ima enake dimenzije kot pos_p
+  14. Nastavite F kot vsoto FK in FB
+  15. Nastavite acc kot F, deljeno z m
+  16. Posodobite hitrost ploščka tako, da jo nastavite na vel_p plus acc krat TIME_STEP</p>
 <p><img alt="" src="../images/algo1.png" /></p>
 <p><img src="images/agent_pak.PNG" width="300"></p>
 <p>Koda
