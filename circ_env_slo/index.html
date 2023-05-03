@@ -971,19 +971,19 @@
 <li><code>TIME_STEP</code>: dolžina trajanja posameznega časovnega koraka simulacije.</li>
 <li><code>WORLD_WIDTH</code>: širina okolja v <code>Box2D</code> simulacijskih enotah [<em>m</em>].</li>
 <li><code>WORLD_HEIGHT</code>: višina okolja v <code>Box2D</code> simulacijskih enotah [<em>m</em>].</li>
-<li><code>metadata</code>: a dictionary that contains metadata about the environment, including the available render modes and the target render frame rate.</li>
+<li><code>metadata</code>: slovar (<em>ang. dictionary</em>), ki vsebuje metapodatke o okolju, vključno s razpoložljivimi načini prikazovanje okolja in hitrostjo osveževanja slike.</li>
 <li><code>contact_listener</code>: an instance of a custom contact listener class that is used to detect collisions between the agent and the environment.</li>
 </ul>
 <h2 id="uporabljene-standardne-gym-funkcije">Uporabljene standardne <strong><code>gym</code></strong> funkcije</h2>
-<p>The environment uses the following functions:</p>
+<p>Okolje vsebuje naslednje funkcije:</p>
 <ul>
-<li><code>__init__()</code>: the initialization function for the environment. It sets up the environment parameters, initializes the Pybox2D world, and sets the observation and action spaces.</li>
-<li><code>_get_obs()</code>: a function that returns the current observation of the agent, which is its position within the world.</li>
-<li><code>reset()</code>: a function that resets the environment to its initial state and returns the initial observation.</li>
-<li><code>step()</code>: a function that takes an action as input, simulates the environment for one time step, and returns the new observation, reward, done flag, and optional information about the simulation.</li>
-<li><code>render()</code>: a function that renders the environment using the specified render mode.</li>
-<li><code>_render_frame()</code>: a function that renders a single frame of the environment.</li>
-<li><code>close()</code>: a function that destroys the Pybox2D world and the agent, and closes the Pygame window.</li>
+<li><code>__init__()</code>: funkcija inicializacije okolja. Nastavi parametre okolja, inicializira svet (<em>ang. world</em>) Pybox2D in nastavi dimenzije za stanja (<em>observation space</em>) in akcije (<em>action space</em>).</li>
+<li><code>_get_obs()</code>: funkcija, ki vrne trenutno stanje agenta oziroma okolja, tj. njegovo pozicijo v svetu.</li>
+<li><code>reset()</code>:  funkcija, ki ponastavi okolje na njegovo začetno stanje in vrne začetno stanje.</li>
+<li><code>step()</code>: funkcija, ki kot vhod sprejme akcijo, simulira okolje za en korak časa in vrne novo stanje, nagrado, zastavico <code>done</code> in dodatne informacije o simulaciji.</li>
+<li><code>render()</code>:  funkcija, ki prikaže okolje z uporabo izbranega načina prikaza.</li>
+<li><code>_render_frame()</code>: funkcija, ki prikaže posamezno sliko okolja.</li>
+<li><code>close()</code>: funkcija, ki pobriše svet Pybox2D in agenta ter zapre okno Pygame.</li>
 </ul>
 <h2 id="dodatne-funkcije">Dodatne funkcije</h2>
 <ul>
