@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dinamika-agenta-s-pakom" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -563,10 +568,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pomik paka v točko
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Pomik paka v točko
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#popravki-funkcij" class="md-nav__link">
+    Popravki funkcij
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dotik-s-pakom" class="md-nav__link">
+    Dotik s pakom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odbijanje-paka-izven-okolja" class="md-nav__link">
+    Odbijanje paka izven okolja
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -687,6 +739,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#popravki-funkcij" class="md-nav__link">
+    Popravki funkcij
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dotik-s-pakom" class="md-nav__link">
+    Dotik s pakom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odbijanje-paka-izven-okolja" class="md-nav__link">
+    Odbijanje paka izven okolja
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -701,8 +784,8 @@
                   
 
 
-  <h1>Pomik paka v točko</h1>
-
+<h1 id="dinamika-agenta-s-pakom">Dinamika agenta s pakom</h1>
+<h2 id="popravki-funkcij">Popravki funkcij</h2>
 <ul>
 <li><code>__init__()</code></li>
 </ul>
@@ -774,6 +857,34 @@ Koda
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="c1">#if self._is_collision(self.agent, self.object):</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="c1">#    reward = 1.0</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="c1">#    done = True</span>
+</span></code></pre></div>
+<h2 id="dotik-s-pakom">Dotik s pakom</h2>
+<ul>
+<li><code>step()</code></li>
+</ul>
+<p>V pogoj za izračun sile kontakta med agentom in pakom dodaj kodo za pozitivno nagrado <code>reward = 1.0</code> in končanje epizode.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>            <span class="o">...</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
+</span></code></pre></div>
+<h2 id="odbijanje-paka-izven-okolja">Odbijanje paka izven okolja</h2>
+<ul>
+<li><code>step()</code></li>
+</ul>
+<p>V pogoj za izračun sile kontakta med agentom in pakom dodaj kodo za majhno pozitivno nagrado <code>reward = 0.1</code>.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            <span class="o">...</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">0.1</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            <span class="c1">#done = True</span>
+</span></code></pre></div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_puck_outside_screen</span><span class="p">():</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
 </span></code></pre></div>
 
 
