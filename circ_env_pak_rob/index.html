@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../circ_env_pak_tocka/">
+        <link rel="prev" href="../circ_env_pak/">
       
       
-        <link rel="next" href="../circ_env_obj_gol/">
+        <link rel="next" href="../circ_env_pak_gol/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
@@ -560,20 +560,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../circ_env_pak_tocka/" class="md-nav__link">
-        Pomik paka v točko
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -641,6 +627,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../circ_env_pak_gol/" class="md-nav__link">
+        Pomik paka v gol 2
+      </a>
     </li>
   
 
@@ -811,6 +811,12 @@
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">agent_pos</span><span class="p">,</span> <span class="n">pak_pos</span><span class="p">))</span>
 </span></code></pre></div>
 <ul>
+<li><code>reset()</code></li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>       <span class="bp">self</span><span class="o">.</span><span class="n">reset_agent</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mf">1.5</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mf">1.5</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mf">1.5</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)))</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">reset_puck</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">)))</span>
+</span></code></pre></div>
+<ul>
 <li><code>step()</code></li>
 </ul>
 <p>Po spodnjem algoritmu napišite kodo za izračun hitrosti paka.</p>
@@ -841,25 +847,25 @@
 <img alt="Izračun trka med krogoma" loading="lazy" src="../images/agent_pak.PNG" width="300" /></p>
 <!---
 Koda
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>        <span class="n">K</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="mf">0.5</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">pos_a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_agent_position</span><span class="p">()</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">pos_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">()</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="p">)</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_distance</span><span class="p">(</span><span class="n">pos_a</span><span class="p">,</span> <span class="n">pos_p</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">FK</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">dist</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="n">direction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_vector</span><span class="p">(</span><span class="n">pos_a</span><span class="p">,</span> <span class="n">pos_p</span><span class="p">)</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="n">FK</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="n">dist</span><span class="o">*</span><span class="n">direction</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">vel_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_velocity</span><span class="p">()</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">FB</span> <span class="o">=</span> <span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">vel_p</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">F</span> <span class="o">=</span> <span class="n">FK</span><span class="o">+</span><span class="n">FB</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">acc</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="n">m</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">set_puck_velocity</span><span class="p">(</span><span class="n">vel_p</span><span class="o">+</span><span class="n">acc</span><span class="o">*</span><span class="n">TIME_STEP</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        <span class="n">K</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="mf">0.5</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">pos_a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_agent_position</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">pos_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">()</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="p">)</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_distance</span><span class="p">(</span><span class="n">pos_a</span><span class="p">,</span> <span class="n">pos_p</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">FK</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">dist</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="n">direction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_vector</span><span class="p">(</span><span class="n">pos_a</span><span class="p">,</span> <span class="n">pos_p</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="n">FK</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="n">dist</span><span class="o">*</span><span class="n">direction</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">vel_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_velocity</span><span class="p">()</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">FB</span> <span class="o">=</span> <span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">vel_p</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">pos_p</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">F</span> <span class="o">=</span> <span class="n">FK</span><span class="o">+</span><span class="n">FB</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">acc</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="n">m</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">set_puck_velocity</span><span class="p">(</span><span class="n">vel_p</span><span class="o">+</span><span class="n">acc</span><span class="o">*</span><span class="n">TIME_STEP</span><span class="p">)</span>
 </span></code></pre></div>
 --->
 
@@ -867,11 +873,11 @@ Koda
 <li><code>step()</code></li>
 </ul>
 <p>Končanje epizode, ko poteče čas:</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span> 
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_step</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="p">:</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>        <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span> 
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_step</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
 </span></code></pre></div>
 <h2 id="dotik-s-pakom">Dotik s pakom</h2>
 <ul>
@@ -879,55 +885,75 @@ Koda
 </ul>
 <p>V pogoj za izračun sile kontakta med agentom in pakom dodaj kodo za pozitivno nagrado <code>reward += 1.0</code> in končanje epizode.</p>
 <p><strong>Psevdokoda</strong>:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>            <span class="o">...</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            <span class="o">...</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
 </span></code></pre></div></p>
 <h2 id="odbijanje-paka-izven-okolja">Odbijanje paka izven okolja</h2>
 <ul>
 <li><code>step()</code></li>
 </ul>
 <p>V pogoj za izračun sile kontakta med agentom in pakom dodaj kodo za majhno pozitivno nagrado <code>reward = 0.1</code>.</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            <span class="o">...</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">0.05</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            <span class="c1">#done = True</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="k">if</span> <span class="n">is_contact_between_agent_and_pack</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            <span class="o">...</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">0.05</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            <span class="c1">#done = True</span>
 </span></code></pre></div>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_puck_outside_screen</span><span class="p">():</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_puck_outside_screen</span><span class="p">():</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
 </span></code></pre></div>
+<p><img alt="" loading="lazy" src="../images/potisk_paka_iz_okolja.gif" width="350" /></p>
+<p><strong>Nagrada skozi čas s PPO metodo za odboj paka iz okolja</strong>
+<img alt="" src="../images/potisk_paka_iz_okolja.png" /></p>
 <h2 id="streljanje-na-zgornji-rob">Streljanje na zgornji rob</h2>
 <p>Za omejitev okolja uporabite funkcijo <code>self.wall_contact_force(object, object_radius, K)</code>, ki izračuna silo kontakta med objektom in stenami. Silo prištejte k silami, ki delujejo na pak.</p>
 <p>Primer, ki kaže kako je mogoče omejiti gibanje agenta</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>        <span class="n">FWa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_contact_force</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>        <span class="n">agent_vel</span> <span class="o">=</span> <span class="n">action</span> <span class="o">+</span> <span class="n">FWa</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">TIME_STEP</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">set_agent_velocity</span><span class="p">(</span><span class="n">agent_vel</span><span class="p">)</span>      
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>        <span class="n">FWa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_contact_force</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        <span class="n">agent_vel</span> <span class="o">=</span> <span class="n">action</span> <span class="o">+</span> <span class="n">FWa</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">TIME_STEP</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">set_agent_velocity</span><span class="p">(</span><span class="n">agent_vel</span><span class="p">)</span>      
 </span></code></pre></div>
 <p>Nagrada za uspešno končanje epizode:</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>        <span class="k">if</span> <span class="n">FW</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span> <span class="c1">#Sila, ki kaže v -y smeri, se zgodi le ob trku z zgornjo steno</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>        <span class="k">if</span> <span class="n">FW</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span> <span class="c1">#Sila, ki kaže v -y smeri, se zgodi le ob trku z zgornjo steno</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
 </span></code></pre></div>
 <p>Za nagrado lahko tudi izračunate parameter <em>delež smeri sile</em> proti središču zgornjega roba ter oblikujete nagrado, ki bo pozitivno nagradila trke agenta s pakom proti zgornjemu robu in z negativno nagrado kaznovala trke v napačno smer.</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>            <span class="n">F_comp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_component</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span> <span class="n">FK</span><span class="o">/</span><span class="n">FK_mag</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">F_comp</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>            <span class="n">F_comp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_component</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span> <span class="n">FK</span><span class="o">/</span><span class="n">FK_mag</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">F_comp</span>
 </span></code></pre></div>
 <p>Lahko nagradite še z kaznijo, da se agent izogiba stenam in strelom z odboji paka od sten.</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">FWa</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># večja kazen za dotike agenta s steno</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="k">if</span> <span class="n">FW</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">FW</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># kazen za dotike paka s stenami</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">FWa</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># kazen za dotike agenta s steno</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="k">if</span> <span class="n">FW</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">FW</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># kazen za dotike paka s stenami</span>
 </span></code></pre></div>
+<p>Za učenje uporabite metodo <a href="https://sb3-contrib.readthedocs.io/en/master/modules/tqc.html"><em>TQC</em></a>.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">sb3_contrib</span> <span class="kn">import</span> <span class="n">TQC</span>
+</span></code></pre></div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">policy_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">n_critics</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>                      <span class="n">n_quantiles</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">TQC</span><span class="p">(</span><span class="s2">&quot;MlpPolicy&quot;</span><span class="p">,</span> 
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>             <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> 
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>             <span class="n">tensorboard_log</span><span class="o">=</span><span class="n">logdir</span><span class="p">,</span> 
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>             <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>             <span class="n">policy_kwargs</span><span class="o">=</span><span class="n">policy_kwargs</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="" loading="lazy" src="../images/potisk_paka_do_roba.gif" width="350" /></p>
+<p><strong>Primerjava učenja treh metod</strong>: <em>PPO</em>, <em>TRPO</em> in <em>TQC</em></p>
+<p><img alt="" src="../images/Screenshot_2023-05-09_13-24-06.png" /></p>
+<p><strong>Nagrada skozi čas za TQC metodo</strong>
+<img alt="" src="../images/Screenshot_2023-05-09_13-25-24.png" /></p>
 
 
 
