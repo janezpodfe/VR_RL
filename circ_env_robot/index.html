@@ -819,11 +819,16 @@ Franka Emika Panda je sodelujoč robotski manipulator s sedmimi stopnjami prosto
 Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravtako se za pošiljanje podatkov iz sheme Simulink v program Unity uporablja protokol UDP. Zaslon služi kot senzor za zaznavanje položaja predmetov na njem s pomočjo IR-senzorjev na robovih. Ko predmet prekine žarek, lahko sistem zazna in izmeri njegov položaj.</p>
 <p>Arhitektura celotnega sistema je prikazana na spodnji sliki. Agent se izvaja na ločenem računalniku in pošilja položaj agenta (puščica številka 1 na sliki 2) na računalnik, na katerem teče model Simulink in vizualizacija Unity. Model Simulink pošilja podatke za vodenje robota krmilniku robota (puščica številka 2). Na zaslonu se prikaže vizualizacija Unity. IR-senzorji zaznajo položaj predmeta v delovnem prostoru okolja in ga pošljejo v računalnik z modelom Simulink in vizualizacijo Unity (puščica številka 3). Stanje okolja se nazadnje pošlje nazaj v računalnik, ki izračuna dejanja agenta (puščica številka 4).</p>
 <p><img alt="" src="../images/robot_povezava1.png" /></p>
-<p><img alt="" src="../images/panda_zaslon_white.jpg" /></p>
-<p><img alt="" src="../images/panda_prijemalo_white.jpg" /></p>
-<p><img alt="" src="../images/robot_povezava2.png" /></p>
-<p><img alt="" src="../images/robot_povezava3.png" /></p>
-<p><img alt="" src="../images/robot_povezava4.png" /></p>
+<p><strong>Slika z robotom in zaslonom</strong>
+<img alt="" loading="lazy" src="../images/panda_zaslon_white.jpg" width="350" /></p>
+<p><strong>Orodje</strong>
+<img alt="" loading="lazy" src="../images/panda_prijemalo_white.jpg" width="350" /></p>
+<p><strong>Primer premikanja v točko</strong>
+<img alt="" loading="lazy" src="../images/robot_povezava2.png" width="350" /></p>
+<p><strong>Primer potiskanja žogice</strong>
+<img alt="" loading="lazy" src="../images/robot_povezava3.png" width="350" /></p>
+<p><strong>Primer potiskanja naključnega objekta</strong>
+<img alt="" src="../images/robot_povezava4.png" /></p>
 <h2 id="predelana-koda-za-komunikacijo-z-robotom">Predelana koda za komunikacijo z robotom</h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">load_circ_modelUDP.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
