@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../circ_env_tocka/">
+        <link rel="prev" href="../circ_env_pak_gol/">
       
       
-        <link rel="next" href="../circ_env_pak_rob/">
+        <link rel="next" href="../circ_env_obj_gol/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
     
     
       
-        <title>Dotik s pakom - Spodbujevalno učenje</title>
+        <title>Pomik paka v gol 3 - Spodbujevalno učenje</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dotik-agenta-s-pakom" class="md-skip">
+        <a href="#pomik-v-gol-2" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dotik s pakom
+              Pomik paka v gol 3
             
           </span>
         </div>
@@ -546,52 +546,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Dotik s pakom
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../circ_env_pak/" class="md-nav__link">
         Dotik s pakom
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#koda-posameznih-funkcij-v-circle_worldpy" class="md-nav__link">
-    Koda posameznih funkcij v circle_world.py
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -629,11 +588,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../circ_env_pak_gol2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pomik paka v gol 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Pomik paka v gol 3
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osnovne-funkcije" class="md-nav__link">
+    Osnovne funkcije
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dodatne-funkcije" class="md-nav__link">
+    Dodatne funkcije
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -749,8 +756,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#koda-posameznih-funkcij-v-circle_worldpy" class="md-nav__link">
-    Koda posameznih funkcij v circle_world.py
+  <a href="#osnovne-funkcije" class="md-nav__link">
+    Osnovne funkcije
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dodatne-funkcije" class="md-nav__link">
+    Dodatne funkcije
   </a>
   
 </li>
@@ -770,40 +784,66 @@
                   
 
 
-<h1 id="dotik-agenta-s-pakom">Dotik agenta s pakom</h1>
-<h2 id="koda-posameznih-funkcij-v-circle_worldpy">Koda posameznih funkcij v <code>circle_world.py</code></h2>
+<h1 id="pomik-v-gol-2">Pomik v gol 2</h1>
+<p>Primer okolja v katerem je gol manjši in ima različno pozicijo levo-desno.</p>
+<h2 id="osnovne-funkcije">Osnovne funkcije</h2>
 <ul>
 <li><code>__init__()</code></li>
 </ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_puck</span><span class="p">(</span><span class="n">object_radius_px</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span> 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                            <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_goal</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="mi">10</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">))</span> 
 </span></code></pre></div>
 <ul>
 <li><code>_get_obs()</code></li>
 </ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        <span class="n">pak_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">()</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        <span class="n">goal_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_goal_position</span><span class="p">()</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">agent_pos</span><span class="p">,</span> <span class="n">pak_pos</span><span class="p">))</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">agent_pos</span><span class="p">,</span> <span class="n">pak_pos</span><span class="p">,</span> <span class="n">goal_pos</span><span class="p">))</span>
 </span></code></pre></div>
 <ul>
 <li><code>reset()</code></li>
 </ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">reset_puck</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_radius</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_radius</span><span class="o">*</span><span class="mi">3</span><span class="p">)))</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">reset_goal</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">50</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">),</span> <span class="mi">10</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">))</span>
 </span></code></pre></div>
 <ul>
 <li><code>step()</code></li>
 </ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> 
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span> 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_step</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_steps</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">):</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">1.0</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">):</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="n">coll_normal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_agent_position</span><span class="p">()</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="n">coll_normal</span> <span class="o">=</span> <span class="n">coll_normal</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">coll_normal</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="n">F_comp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_component</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_puck_position</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_goal_position</span><span class="p">(),</span> <span class="n">coll_normal</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">F_comp</span>  
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">):</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">):</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.007</span>
 </span></code></pre></div>
-<ul>
-<li><code>_render_frame()</code></li>
-</ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">draw_puck</span><span class="p">(</span><span class="n">yellow</span><span class="p">)</span>
+<h2 id="dodatne-funkcije">Dodatne funkcije</h2>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="k">def</span> <span class="nf">get_goal_position</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="p">])</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">def</span> <span class="nf">reset_goal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">linearVelocity</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">angularVelocity</span> <span class="o">=</span> <span class="mf">0.0</span>  
 </span></code></pre></div>
-<p><strong>Potek učenja</strong>
-<img alt="" src="../images/dotik_s_pakom.png" /></p>
-<p><img alt="" loading="lazy" src="../images/dotik_s_pakom.gif" width="350" /></p>
 
 
 
