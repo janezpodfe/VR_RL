@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../instalCircEnv/">
+        <link rel="prev" href="../circ_env_train/">
       
       
-        <link rel="next" href="../circ_env_tocka/">
+        <link rel="next" href="../hockey_env/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
     
     
       
-        <title>Premik agenta z miško - Spodbujevalno učenje</title>
+        <title>Povezovanje z robotom - Spodbujevalno učenje</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#povezovanje-z-robotom" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Premik agenta z miško
+              Povezovanje z robotom
             
           </span>
         </div>
@@ -527,19 +532,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../move_agent_mouse/" class="md-nav__link">
         Premik agenta z miško
       </a>
-      
     </li>
   
 
@@ -647,11 +644,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../circ_env_robot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Povezovanje z robotom
       </a>
+      
     </li>
   
 
@@ -743,6 +750,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -757,14 +766,18 @@
                   
 
 
-  <h1>Premik agenta z miško</h1>
-
-<ul>
-<li><code>step()</code></li>
-</ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        <span class="c1">############ TUKAJ SPREMINJATE</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="n">action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_agent_mouse</span><span class="p">()</span>
-</span></code></pre></div>
+<h1 id="povezovanje-z-robotom">Povezovanje z robotom</h1>
+<p>Povezovanje z robotom poteka preko UDP komunikacije.</p>
+<p>Za prikaz spodbujevalnega učenja na dejanskem robotu boste uporabili robota Franka Emika Panda, zaslon, ki je nameščen v delovnem prostoru robota, in IR senzorje za zaznavanje predmetov na zaslonu. Zaslon je prekrit s prozorno površino (pleksi steklo) z robovi in deluje kot delovni prostor za igralno okolje. Predmeti so postavljeni na površino iz pleksi stekla, IR-senzorji pa so nameščeni ob robu površine iz pleksi stekla.
+Franka Emika Panda je sodelujoč robotski manipulator s sedmimi stopnjami prostosti, senzorjem navora v vsakem sklepu, dosegom 855 mm in nosilnostjo 3 kg. Na vrhu ima prijemalo, s katerim lahko zgrabi predmete ali orodja. V našem primeru bomo uporabili 3D-natisnjeno orodje, ki predstavlja agenta. Robota se upravlja s shemo Simulink, ki pošilja podatke krmilniku robota prek protokola UDP (User Datagram Protocol). 
+Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravtako se za pošiljanje podatkov iz sheme Simulink v program Unity uporablja protokol UDP. Zaslon služi kot senzor za zaznavanje položaja predmetov na njem s pomočjo IR-senzorjev na robovih. Ko predmet prekine žarek, lahko sistem zazna in izmeri njegov položaj.</p>
+<p>Arhitektura celotnega sistema je prikazana na spodnji sliki. Agent se izvaja na ločenem računalniku in pošilja položaj agenta (puščica številka 1 na sliki 2) na računalnik, na katerem teče model Simulink in vizualizacija Unity. Model Simulink pošilja podatke za vodenje robota krmilniku robota (puščica številka 2). Na zaslonu se prikaže vizualizacija Unity. IR-senzorji zaznajo položaj predmeta v delovnem prostoru okolja in ga pošljejo v računalnik z modelom Simulink in vizualizacijo Unity (puščica številka 3). Stanje okolja se nazadnje pošlje nazaj v računalnik, ki izračuna dejanja agenta (puščica številka 4).</p>
+<p><img alt="" src="../images/robot_povezava1.png" /></p>
+<p><img alt="" src="../images/panda_zaslon_white.jpg" /></p>
+<p><img alt="" src="../images/panda_prijemalo_white.jpg" /></p>
+<p><img alt="" src="../images/robot_povezava2.png" /></p>
+<p><img alt="" src="../images/robot_povezava3.png" /></p>
+<p><img alt="" src="../images/robot_povezava4.png" /></p>
 
 
 
