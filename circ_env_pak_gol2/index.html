@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pomik-v-gol-3" class="md-skip">
+        <a href="#drugi-primeri-potiskanje" class="md-skip">
           Skip to content
         </a>
       
@@ -638,16 +638,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#manjsi-gol-razlicne-pozicije-levo-desno" class="md-nav__link">
+    Manjši gol, različne pozicije levo-desno
+  </a>
+  
+    <nav class="md-nav" aria-label="Manjši gol, različne pozicije levo-desno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#osnovne-funkcije" class="md-nav__link">
     Osnovne funkcije
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dodatne-funkcije" class="md-nav__link">
     Dodatne funkcije
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kvadraten-gol-razlicne-pozicije-levo-desno-gor-dol" class="md-nav__link">
+    Kvadraten gol, različne pozicije levo-desno, gor-dol
+  </a>
+  
+    <nav class="md-nav" aria-label="Kvadraten gol, različne pozicije levo-desno, gor-dol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osnovne-funkcije_1" class="md-nav__link">
+    Osnovne funkcije
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -798,16 +831,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#manjsi-gol-razlicne-pozicije-levo-desno" class="md-nav__link">
+    Manjši gol, različne pozicije levo-desno
+  </a>
+  
+    <nav class="md-nav" aria-label="Manjši gol, različne pozicije levo-desno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#osnovne-funkcije" class="md-nav__link">
     Osnovne funkcije
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dodatne-funkcije" class="md-nav__link">
     Dodatne funkcije
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kvadraten-gol-razlicne-pozicije-levo-desno-gor-dol" class="md-nav__link">
+    Kvadraten gol, različne pozicije levo-desno, gor-dol
+  </a>
+  
+    <nav class="md-nav" aria-label="Kvadraten gol, različne pozicije levo-desno, gor-dol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osnovne-funkcije_1" class="md-nav__link">
+    Osnovne funkcije
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -826,9 +892,10 @@
                   
 
 
-<h1 id="pomik-v-gol-3">Pomik v gol 3</h1>
+<h1 id="drugi-primeri-potiskanje">Drugi primeri potiskanje</h1>
+<h2 id="manjsi-gol-razlicne-pozicije-levo-desno">Manjši gol, različne pozicije levo-desno</h2>
 <p>Primer okolja v katerem je gol manjši in ima različno pozicijo levo-desno.</p>
-<h2 id="osnovne-funkcije">Osnovne funkcije</h2>
+<h3 id="osnovne-funkcije">Osnovne funkcije</h3>
 <ul>
 <li><code>__init__()</code></li>
 </ul>
@@ -877,7 +944,7 @@
 </span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_collision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">):</span>
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.007</span>
 </span></code></pre></div>
-<h2 id="dodatne-funkcije">Dodatne funkcije</h2>
+<h3 id="dodatne-funkcije">Dodatne funkcije</h3>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="k">def</span> <span class="nf">get_goal_position</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="p">])</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -891,6 +958,27 @@
 <p>Temno modra je učenje potiska do velikega gola.
 Svetlo modra je učenje potiska do malega gola.</p>
 <p><img alt="" src="../images/Screenshot_2023-05-10_08-50-00.png" /></p>
+<h2 id="kvadraten-gol-razlicne-pozicije-levo-desno-gor-dol">Kvadraten gol, različne pozicije levo-desno, gor-dol</h2>
+<p>Primer okolja v katerem je gol v obliki kvadrata in ima različno pozicijo levo-desno ter gor-dol.</p>
+<h3 id="osnovne-funkcije_1">Osnovne funkcije</h3>
+<ul>
+<li><code>__init__()</code></li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span> 
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                                                <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="bp">self</span><span class="o">.</span><span class="n">create_goal</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">)))</span>
+</span></code></pre></div>
+<ul>
+<li><code>reset()</code></li>
+</ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">reset_goal</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_dim</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">)))</span>
+</span></code></pre></div>
+<p><img alt="" loading="lazy" src="potisk_paka_do_gola_premikajoc.gif" width="350" /></p>
+<p><strong>Potek učenja</strong></p>
+<p><img alt="" src="../images/Figure_2.png" /></p>
 
 
 
