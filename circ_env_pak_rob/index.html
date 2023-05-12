@@ -973,6 +973,7 @@ Koda
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="k">return</span> <span class="n">outside</span> 
 </span></code></pre></div>
+<p>V <code>step()</code> dodate pogoj za končanje epizode z pozitivno nagrado:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_puck_outside_screen</span><span class="p">():</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>            <span class="n">reward</span> <span class="o">=</span> <span class="mf">1.0</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>  
