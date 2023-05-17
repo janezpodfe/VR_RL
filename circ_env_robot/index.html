@@ -111,39 +111,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -693,6 +660,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#primer-na-robotu" class="md-nav__link">
+    primer na robotu
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -811,6 +785,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#primer-na-robotu" class="md-nav__link">
+    primer na robotu
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -826,23 +807,23 @@
                   
 
 
-<h1 id="povezovanje-z-robotom">Povezovanje z robotom</h1>
+<div><h1 id="povezovanje-z-robotom">Povezovanje z robotom</h1>
 <h2 id="povezovanje-z-robotom-poteka-preko-udp-komunikacije">Povezovanje z robotom poteka preko UDP komunikacije.</h2>
 <p>Za prikaz spodbujevalnega učenja na dejanskem robotu boste uporabili robota Franka Emika Panda, zaslon, ki je nameščen v delovnem prostoru robota, in IR senzorje za zaznavanje predmetov na zaslonu. Zaslon je prekrit s prozorno površino (pleksi steklo) z robovi in deluje kot delovni prostor za igralno okolje. Predmeti so postavljeni na površino iz pleksi stekla, IR-senzorji pa so nameščeni ob robu površine iz pleksi stekla.
 Franka Emika Panda je sodelujoč robotski manipulator s sedmimi stopnjami prostosti, senzorjem navora v vsakem sklepu, dosegom 855 mm in nosilnostjo 3 kg. Na vrhu ima prijemalo, s katerim lahko zgrabi predmete ali orodja. V našem primeru bomo uporabili 3D-natisnjeno orodje, ki predstavlja agenta. Robota se upravlja s shemo Simulink, ki pošilja podatke krmilniku robota prek protokola UDP (User Datagram Protocol). 
 Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravtako se za pošiljanje podatkov iz sheme Simulink v program Unity uporablja protokol UDP. Zaslon služi kot senzor za zaznavanje položaja predmetov na njem s pomočjo IR-senzorjev na robovih. Ko predmet prekine žarek, lahko sistem zazna in izmeri njegov položaj.</p>
 <p>Arhitektura celotnega sistema je prikazana na spodnji sliki. Agent se izvaja na ločenem računalniku in pošilja položaj agenta (puščica številka 1 na sliki 2) na računalnik, na katerem teče model Simulink in vizualizacija Unity. Model Simulink pošilja podatke za vodenje robota krmilniku robota (puščica številka 2). Na zaslonu se prikaže vizualizacija Unity. IR-senzorji zaznajo položaj predmeta v delovnem prostoru okolja in ga pošljejo v računalnik z modelom Simulink in vizualizacijo Unity (puščica številka 3). Stanje okolja se nazadnje pošlje nazaj v računalnik, ki izračuna dejanja agenta (puščica številka 4).</p>
-<p><img alt="" src="../images/robot_povezava1.png" /></p>
+<p><img alt="" src="../images/robot_povezava1.png"></p>
 <p><strong>Slika z robotom in zaslonom</strong></p>
-<p><img alt="" loading="lazy" src="../images/panda_zaslon_white.jpg" width="450" /></p>
+<p><img alt="" loading="lazy" src="../images/panda_zaslon_white.jpg" width="450"></p>
 <p><strong>Orodje</strong></p>
-<p><img alt="" loading="lazy" src="../images/panda_prijemalo_white.jpg" width="300" /></p>
+<p><img alt="" loading="lazy" src="../images/panda_prijemalo_white.jpg" width="300"></p>
 <p><strong>Primer premikanja v točko</strong></p>
-<p><img alt="" loading="lazy" src="../images/robot_povezava2.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="../images/robot_povezava2.png" width="600"></p>
 <p><strong>Primer potiskanja žogice</strong></p>
-<p><img alt="" loading="lazy" src="../images/robot_povezava3.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="../images/robot_povezava3.png" width="600"></p>
 <p><strong>Primer potiskanja naključnega objekta</strong></p>
-<p><img alt="" src="../images/robot_povezava4.png" /></p>
+<p><img alt="" src="../images/robot_povezava4.png"></p>
 <h2 id="predelana-koda-za-komunikacijo-z-robotom">Predelana koda za komunikacijo z robotom</h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">load_circ_modelUDP.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -938,19 +919,19 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 </span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="hll"><span class="kn">import</span> <span class="nn">sys</span>
 </span></span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="hll"><span class="kn">import</span> <span class="nn">struct</span>
 </span></span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;circ_env/Circle-v0&#39;</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">'circ_env/Circle-v0'</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="s2">"human"</span><span class="p">)</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="hll"><span class="n">client_ip</span> <span class="o">=</span> <span class="s2">&quot;192.168.65.194&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="hll"><span class="n">client_ip</span> <span class="o">=</span> <span class="s2">"192.168.65.194"</span>
 </span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="hll"><span class="n">port_send</span>  <span class="o">=</span> <span class="mi">1026</span>
 </span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="hll"><span class="n">send_socket</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
 </span></span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="hll">
 </span></span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="hll"><span class="n">port_rec</span>  <span class="o">=</span> <span class="mi">1027</span>
 </span></span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="hll"><span class="n">rec_socket</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
-</span></span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="hll"><span class="n">rec_socket</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span><span class="n">port_rec</span><span class="p">))</span>
+</span></span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="hll"><span class="n">rec_socket</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="n">port_rec</span><span class="p">))</span>
 </span></span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="hll"><span class="c1">#rec_socket.settimeout(1.0)  # Set timeout to 1 second</span>
 </span></span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="n">model</span> <span class="o">=</span> <span class="n">TQC</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;./models/TQC/11111&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model loaded.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="n">model</span> <span class="o">=</span> <span class="n">TQC</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"./models/TQC/11111"</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Model loaded."</span><span class="p">)</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="c1"># Reset the environment</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
@@ -959,7 +940,7 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">EPISODES</span><span class="p">):</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Episode: &quot;</span><span class="p">,</span> <span class="n">episode</span><span class="p">)</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Episode: "</span><span class="p">,</span> <span class="n">episode</span><span class="p">)</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">total_reward</span> <span class="o">=</span> <span class="mi">0</span>
@@ -969,29 +950,29 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="hll">        <span class="c1">#lokacija pucka na plošči</span>
 </span></span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="hll">        <span class="k">try</span><span class="p">:</span>
 </span></span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="hll">            <span class="c1"># Attempt to receive up to 1024 bytes of data</span>
-</span></span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try to receive data.&quot;</span><span class="p">)</span>
+</span></span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">"Try to receive data."</span><span class="p">)</span>
 </span></span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="hll">            <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">rec_socket</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-</span></span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="hll">            <span class="n">puck_values</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;2f&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="hll">            <span class="n">puck_values</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">'2f'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </span></span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="hll">        <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
 </span></span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="hll">            <span class="c1"># Handle timeout exception</span>
-</span></span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Timeout occurred while receiving data.&quot;</span><span class="p">)</span>             
+</span></span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">"Timeout occurred while receiving data."</span><span class="p">)</span>             
 </span></span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="hll">        <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
-</span></span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="hll">            <span class="c1"># If no data is received, you get here, but it&#39;s not an error</span>
+</span></span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="hll">            <span class="c1"># If no data is received, you get here, but it's not an error</span>
 </span></span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="hll">            <span class="c1"># Ignore and continue</span>
-</span></span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;noData&quot;</span><span class="p">)</span>
+</span></span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">"noData"</span><span class="p">)</span>
 </span></span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="hll">            <span class="k">pass</span>
 </span></span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="hll">
 </span></span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="hll">        <span class="c1">#print(puck_values)</span>
 </span></span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="hll">
 </span></span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="hll">        <span class="n">puck_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">puck_values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">puck_values</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-</span></span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;puck_values&quot;</span><span class="p">,</span> <span class="n">puck_values</span><span class="p">)</span>
+</span></span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s2">"puck_values"</span><span class="p">,</span> <span class="n">puck_values</span><span class="p">)</span>
 </span></span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="hll">        <span class="c1">#center simulink [0,0]</span>
 </span></span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="hll">        <span class="n">puck_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">env</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span>
 </span></span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="hll">        <span class="n">puck_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">env</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span>
 </span></span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="hll">        <span class="c1">#pixel to m</span>
 </span></span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="hll">        <span class="n">puck_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="n">env</span><span class="o">.</span><span class="n">PPM</span>
 </span></span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="hll">        <span class="n">puck_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/=</span> <span class="n">env</span><span class="o">.</span><span class="n">PPM</span>
-</span></span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;puck_pos&quot;</span><span class="p">,</span> <span class="n">puck_pos</span><span class="p">)</span>
+</span></span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s2">"puck_pos"</span><span class="p">,</span> <span class="n">puck_pos</span><span class="p">)</span>
 </span></span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="hll">
 </span></span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="hll">        <span class="n">env</span><span class="o">.</span><span class="n">set_puck_position</span><span class="p">([</span><span class="n">puck_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">puck_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 </span></span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a>
@@ -1000,18 +981,20 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 </span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>
 </span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="hll">        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </span></span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="hll">        <span class="c1"># agent pos., target pos. </span>
-</span></span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="hll">        <span class="n">bin_vals</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;4f&#39;</span><span class="p">,(</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">)</span>
+</span></span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="hll">        <span class="n">bin_vals</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'4f'</span><span class="p">,(</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">PPM</span><span class="p">)</span>
 </span></span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="hll">        <span class="n">send_socket</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">bin_vals</span><span class="p">,</span> <span class="p">(</span><span class="n">client_ip</span><span class="p">,</span> <span class="n">port_send</span><span class="p">))</span>
 </span></span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>
 </span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="n">total_reward</span> <span class="o">=</span> <span class="n">total_reward</span> <span class="o">+</span> <span class="n">reward</span>
 </span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>
 </span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 </span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a>
-</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total reward&quot;</span><span class="p">,</span> <span class="n">total_reward</span><span class="p">)</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"total reward"</span><span class="p">,</span> <span class="n">total_reward</span><span class="p">)</span>
 </span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a>
 </span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="c1"># Close the environment</span>
 </span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
+<h2 id="primer-na-robotu">primer na robotu</h2>
+<p><div class="video-container"><iframe src="https://youtu.be/Gal38w0Grzw" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div><div class="video-container"><iframe src="https://youtu.be/wEuomAma0GY" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div><div class="video-container"><iframe src="https://youtu.be/UMTpDaCiZ8Q" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p></div>
 
 
 

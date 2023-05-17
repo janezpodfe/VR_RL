@@ -111,39 +111,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -854,7 +821,7 @@
                   
 
 
-<h1 id="logiranje-in-spremljanje-ucenja">Logiranje in spremljanje učenja</h1>
+<div><h1 id="logiranje-in-spremljanje-ucenja">Logiranje in spremljanje učenja</h1>
 <h2 id="python-skripta-za-testiranje-agenta">Python skripta za testiranje agenta</h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">load_carDQN2.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -914,16 +881,16 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="hll"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;MountainCar-v0&quot;</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"MountainCar-v0"</span><span class="p">)</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Actions = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Obs space high = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span><span class="p">)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Obs space low&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Actions = "</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Obs space high = "</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Obs space low"</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span><span class="p">)</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">model</span> <span class="o">=</span> <span class="n">DQN</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;dqn_car&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">model</span> <span class="o">=</span> <span class="n">DQN</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"dqn_car"</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">mean_reward</span><span class="p">,</span> <span class="n">std_reward</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">get_env</span><span class="p">(),</span> <span class="n">n_eval_episodes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean reward: </span><span class="si">{</span><span class="n">mean_reward</span><span class="si">}</span><span class="s1">, Std reward: </span><span class="si">{</span><span class="n">std_reward</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Mean reward: </span><span class="si">{</span><span class="n">mean_reward</span><span class="si">}</span><span class="s1">, Std reward: </span><span class="si">{</span><span class="n">std_reward</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="hll"><span class="n">reward_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">###</span>
 </span></span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="hll">
@@ -931,7 +898,7 @@
 </span></span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="hll">
 </span></span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="hll">    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </span></span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="hll">    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EPISODE &quot;</span><span class="p">,</span> <span class="n">episode</span><span class="p">)</span>
+</span></span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">"EPISODE "</span><span class="p">,</span> <span class="n">episode</span><span class="p">)</span>
 </span></span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="hll">
 </span></span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="hll">    <span class="n">tot_reward</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="c1">###</span>
 </span></span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="hll">
@@ -949,20 +916,20 @@
 </span></span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="hll">
 </span></span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)</span>
 </span></span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">reward_list</span><span class="p">),</span><span class="mi">2</span><span class="p">),</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-</span></span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
-</span></span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;povprečna nagrada&#39;</span><span class="p">)</span>
-</span></span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)),</span> <span class="n">xy</span><span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)</span><span class="o">+</span><span class="mf">0.7</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+</span></span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'--'</span><span class="p">)</span>
+</span></span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'povprečna nagrada'</span><span class="p">)</span>
+</span></span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)),</span> <span class="n">xy</span><span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reward_list</span><span class="p">)</span><span class="o">+</span><span class="mf">0.7</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'blue'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
 </span></span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="hll">
 </span></span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="hll"><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-</span></span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="hll"><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-</span></span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="hll"><span class="n">f</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">)</span>
-</span></span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epizoda&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-</span></span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nagrada&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-</span></span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Vrednost nagrade v posamezni epizodi&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-</span></span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="hll"><span class="c1">#f.savefig(&#39;reward3.jpg&#39;) ###</span>
+</span></span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="hll"><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"both"</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</span></span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="hll"><span class="n">f</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">'right'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">)</span>
+</span></span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Epizoda'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</span></span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Nagrada'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</span></span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Vrednost nagrade v posamezni epizodi'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</span></span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="hll"><span class="c1">#f.savefig('reward3.jpg') ###</span>
 </span></span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="hll"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></span></code></pre></div></td></tr></table></div>
-<p><img alt="alt text" src="../images/reward3.jpg" /></p>
+<p><img alt="alt text" src="../images/reward3.jpg"></p>
 <h2 id="logiranje-in-sprotno-shranjevanje-agentov">Logiranje in sprotno shranjevanje agentov</h2>
 <ul>
 <li>Paket Tensorboard</li>
@@ -993,19 +960,19 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span> <span class="nn">stable_baselines3.common.evaluation</span> <span class="kn">import</span> <span class="n">evaluate_policy</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="hll"><span class="kn">import</span> <span class="nn">os</span>
 </span></span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="hll"><span class="n">models_dir</span> <span class="o">=</span> <span class="s2">&quot;models/DQN&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="hll"><span class="n">models_dir</span> <span class="o">=</span> <span class="s2">"models/DQN"</span>
 </span></span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="hll"><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">models_dir</span><span class="p">):</span>
 </span></span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="hll">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">models_dir</span><span class="p">)</span>
 </span></span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="hll">    
-</span></span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="hll"><span class="n">logdir</span> <span class="o">=</span> <span class="s2">&quot;logs&quot;</span>
+</span></span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="hll"><span class="n">logdir</span> <span class="o">=</span> <span class="s2">"logs"</span>
 </span></span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="hll"><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">logdir</span><span class="p">):</span>
 </span></span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="hll">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">logdir</span><span class="p">)</span> 
 </span></span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;MountainCar-v0&quot;</span><span class="p">)</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"MountainCar-v0"</span><span class="p">)</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Actions = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Obs space high = &quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span><span class="p">)</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Obs space low&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Actions = "</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Obs space high = "</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span><span class="p">)</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span> <span class="s2">"Obs space low"</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
@@ -1031,7 +998,7 @@
 <span class="normal"><a href="#__codelineno-2-35">35</a></span>
 <span class="normal"><a href="#__codelineno-2-36">36</a></span>
 <span class="normal"><a href="#__codelineno-2-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">policy_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">net_arch</span><span class="o">=</span><span class="p">[</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">])</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="n">model</span> <span class="o">=</span> <span class="n">DQN</span><span class="p">(</span><span class="s1">&#39;MlpPolicy&#39;</span><span class="p">,</span> 
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="n">model</span> <span class="o">=</span> <span class="n">DQN</span><span class="p">(</span><span class="s1">'MlpPolicy'</span><span class="p">,</span> 
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>            <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>            <span class="n">learning_rate</span><span class="o">=</span><span class="mf">4e-3</span><span class="p">,</span>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>            <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
@@ -1063,17 +1030,17 @@
 </span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 </span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42"></a>    <span class="n">iters</span> <span class="o">+=</span> <span class="mi">1</span>
 </span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43"></a>    
-</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44"></a>    <span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="n">TIMESTEPS</span><span class="p">,</span> <span class="n">reset_num_timesteps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tb_log_name</span><span class="o">=</span><span class="s2">&quot;DQN&quot;</span><span class="p">)</span>
-</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45"></a>    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">models_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">TIMESTEPS</span><span class="o">*</span><span class="n">iters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44"></a>    <span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="n">TIMESTEPS</span><span class="p">,</span> <span class="n">reset_num_timesteps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tb_log_name</span><span class="o">=</span><span class="s2">"DQN"</span><span class="p">)</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45"></a>    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">models_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">TIMESTEPS</span><span class="o">*</span><span class="n">iters</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="uporaba-logiranja-za-spremljanje-ucenja">Uporaba logiranja za spremljanje učenja</h2>
 <p>tensorboard --logdir=logs</p>
 <p>python -m tensorboard.main --logdir=logs</p>
-<p><img alt="alt text" src="../images/Picture10.png" /></p>
-<p><img alt="alt text" src="../images/Picture11.png" /></p>
-<p><img alt="alt text" src="../images/Picture12.png" /></p>
+<p><img alt="alt text" src="../images/Picture10.png"></p>
+<p><img alt="alt text" src="../images/Picture11.png"></p>
+<p><img alt="alt text" src="../images/Picture12.png"></p></div>
 
 
 
