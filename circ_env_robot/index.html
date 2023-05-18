@@ -1109,51 +1109,41 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 <li><code>__init__</code></li>
 </ul>
 <p>Za vrstico <code>self.create_agent(agent_radius_px, 'k')</code> je potrebno postaviti agenta na sredino delovnega prostora s funkcijo <code>reset_agent</code>.</p>
-<p>``` py highlight="2"
-        self.create_agent(agent_radius_px, 'k') 
-        self.reset_agent((self.width/2, self.height/2))
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- `reset`
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Potrebno je zakomentirati vrstico za resetiranje pozicije agenta. Če se pobira pozicijo tarče z zaslona, je potrebno zakomntirati tudi vrstico za resetiranje pozicije tarče.
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>``` py 
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        #self.reset_agent((np.random.uniform(self.agent_radius*1.5, self.width - self.agent_radius*1.5), np.random.uniform(self.agent_radius*1.5, self.height - self.agent_radius*1.5)))
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        #self.reset_puck((np.random.uniform(self.object_radius+self.agent_radius*3, self.width - self.object_radius-self.agent_radius*3), np.random.uniform(self.object_radius+self.agent_radius*3, self.height - self.object_radius-self.agent_radius*3)))
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        #self.reset_target((np.random.uniform(self.agent_radius*2, self.width - self.agent_radius*2), np.random.uniform(self.agent_radius*2, self.height - self.agent_radius*2)))
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_agent</span><span class="p">(</span><span class="n">agent_radius_px</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">)</span> 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">reset_agent</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</span></span></code></pre></div>
+<ul>
+<li><code>reset</code></li>
+</ul>
+<p>Potrebno je zakomentirati vrstico za resetiranje pozicije agenta. Če se pobira pozicijo tarče z zaslona, je potrebno zakomntirati tudi vrstico za resetiranje pozicije tarče.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>        <span class="c1">#self.reset_agent((np.random.uniform(self.agent_radius*1.5, self.width - self.agent_radius*1.5), np.random.uniform(self.agent_radius*1.5, self.height - self.agent_radius*1.5)))</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        <span class="c1">#self.reset_puck((np.random.uniform(self.object_radius+self.agent_radius*3, self.width - self.object_radius-self.agent_radius*3), np.random.uniform(self.object_radius+self.agent_radius*3, self.height - self.object_radius-self.agent_radius*3)))</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="c1">#self.reset_target((np.random.uniform(self.agent_radius*2, self.width - self.agent_radius*2), np.random.uniform(self.agent_radius*2, self.height - self.agent_radius*2)))</span>
 </span></code></pre></div>
 <ul>
 <li><code>step</code></li>
 </ul>
 <p>Na koncu kode za nagrado je potrebno postaviti zastavico <code>done</code> na <code>False</code>, da se epozoda ne konča.</p>
-<p>``` py highlight="1"
-        done = False</p>
-<div class="language-text highlight"><pre><span></span><code>    # Reward function stop
-    ############ DO TUKAJ SPREMINJATE
-</code></pre></div>
-<p>```
-
-
-</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="hll">        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="c1"># Reward function stop</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="c1">############ DO TUKAJ SPREMINJATE</span>
+</span></code></pre></div>
 <h2 id="zagon-na-robotu">Zagon na robotu</h2>
 <h3 id="unity-simulink">Unity &amp; Simulink</h3>
 <p>Pot do projekta z Unity in Simulink projekta
-<code>D:\VAJE\2023\VR</code>
-
-Pot do Simulink sheme
-<code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code>
-</p>
+<code>D:\VAJE\2023\VR</code></p>
+<p>Pot do Simulink sheme
+<code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code></p>
 <h3 id="unity">Unity</h3>
-<p>Zažene se UnityHub in projekt. Še bolje je zagnati kar <code>FrankaPandaIK.exe</code> aplikacijo, ki je na <code>D:\VAJE\2023\VR\RL\EnvCircAplikacija</code>.
-</p>
+<p>Zažene se UnityHub in projekt. Še bolje je zagnati kar <code>FrankaPandaIK.exe</code> aplikacijo, ki je na <code>D:\VAJE\2023\VR\RL\EnvCircAplikacija</code>.</p>
 <h3 id="simulink">Simulink</h3>
-<p>Shema z imenom <code>franka_control.slx</code> v mapi <code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code>.
-</p>
+<p>Shema z imenom <code>franka_control.slx</code> v mapi <code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code>.</p>
 <h3 id="ubuntu-linux-rt-libfranka">Ubuntu Linux RT Libfranka</h3>
-<p>Terminal
-
-<code>console
-cd users/aljazb/Control_Libfranka/libfranka/build/
-./Control_Libfranka 192.168.4.20</code></p>
+<p>Terminal</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">cd users/aljazb/Control_Libfranka/libfranka/build/</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">./Control_Libfranka 192.168.4.20</span>
+</span></code></pre></div>
 <h3 id="postopek-zaganjanja">Postopek zaganjanja</h3>
 <ol>
 <li>Virtual machine <em>Windows 10</em>: zaženi Unity aplikacijo.</li>
