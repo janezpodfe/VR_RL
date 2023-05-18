@@ -661,6 +661,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-agenti" class="md-nav__link">
+    AI agenti
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zagon-na-robotu" class="md-nav__link">
+    Zagon na robotu
+  </a>
+  
+    <nav class="md-nav" aria-label="Zagon na robotu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unity-simulink" class="md-nav__link">
+    Unity &amp; Simulink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unity" class="md-nav__link">
+    Unity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulink" class="md-nav__link">
+    Simulink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-linux-rt-libfranka" class="md-nav__link">
+    Ubuntu Linux RT Libfranka
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postopek-zaganjanja" class="md-nav__link">
+    Postopek zaganjanja
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#videji-primera-na-robotu" class="md-nav__link">
     Videji primera na robotu
   </a>
@@ -782,6 +837,61 @@
   <a href="#predelana-koda-za-komunikacijo-z-robotom" class="md-nav__link">
     Predelana koda za komunikacijo z robotom
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agenti" class="md-nav__link">
+    AI agenti
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zagon-na-robotu" class="md-nav__link">
+    Zagon na robotu
+  </a>
+  
+    <nav class="md-nav" aria-label="Zagon na robotu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unity-simulink" class="md-nav__link">
+    Unity &amp; Simulink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unity" class="md-nav__link">
+    Unity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulink" class="md-nav__link">
+    Simulink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-linux-rt-libfranka" class="md-nav__link">
+    Ubuntu Linux RT Libfranka
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postopek-zaganjanja" class="md-nav__link">
+    Postopek zaganjanja
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -993,12 +1103,80 @@ Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravt
 </span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="c1"># Close the environment</span>
 </span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
+<h2 id="ai-agenti">AI agenti</h2>
+<p>Spremembne v python skripti <code>circ_env.py</code></p>
+<ul>
+<li><code>__init__</code></li>
+</ul>
+<p>Za vrstico <code>self.create_agent(agent_radius_px, 'k')</code> je potrebno postaviti agenta na sredino delovnega prostora s funkcijo <code>reset_agent</code>.</p>
+<p>``` py highlight="2"
+        self.create_agent(agent_radius_px, 'k') 
+        self.reset_agent((self.width/2, self.height/2))
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- `reset`
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Potrebno je zakomentirati vrstico za resetiranje pozicije agenta. Če se pobira pozicijo tarče z zaslona, je potrebno zakomntirati tudi vrstico za resetiranje pozicije tarče.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>``` py 
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        #self.reset_agent((np.random.uniform(self.agent_radius*1.5, self.width - self.agent_radius*1.5), np.random.uniform(self.agent_radius*1.5, self.height - self.agent_radius*1.5)))
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        #self.reset_puck((np.random.uniform(self.object_radius+self.agent_radius*3, self.width - self.object_radius-self.agent_radius*3), np.random.uniform(self.object_radius+self.agent_radius*3, self.height - self.object_radius-self.agent_radius*3)))
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        #self.reset_target((np.random.uniform(self.agent_radius*2, self.width - self.agent_radius*2), np.random.uniform(self.agent_radius*2, self.height - self.agent_radius*2)))
+</span></code></pre></div>
+<ul>
+<li><code>step</code></li>
+</ul>
+<p>Na koncu kode za nagrado je potrebno postaviti zastavico <code>done</code> na <code>False</code>, da se epozoda ne konča.</p>
+<p>``` py highlight="1"
+        done = False</p>
+<div class="language-text highlight"><pre><span></span><code>    # Reward function stop
+    ############ DO TUKAJ SPREMINJATE
+</code></pre></div>
+<p>```
+
+
+</p>
+<h2 id="zagon-na-robotu">Zagon na robotu</h2>
+<h3 id="unity-simulink">Unity &amp; Simulink</h3>
+<p>Pot do projekta z Unity in Simulink projekta
+<code>D:\VAJE\2023\VR</code>
+
+Pot do Simulink sheme
+<code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code>
+</p>
+<h3 id="unity">Unity</h3>
+<p>Zažene se UnityHub in projekt. Še bolje je zagnati kar <code>FrankaPandaIK.exe</code> aplikacijo, ki je na <code>D:\VAJE\2023\VR\RL\EnvCircAplikacija</code>.
+</p>
+<h3 id="simulink">Simulink</h3>
+<p>Shema z imenom <code>franka_control.slx</code> v mapi <code>D:\VAJE\2023\VR\RL\EnvCirc\matlab</code>.
+</p>
+<h3 id="ubuntu-linux-rt-libfranka">Ubuntu Linux RT Libfranka</h3>
+<p>Terminal
+
+<code>console
+cd users/aljazb/Control_Libfranka/libfranka/build/
+./Control_Libfranka 192.168.4.20</code></p>
+<h3 id="postopek-zaganjanja">Postopek zaganjanja</h3>
+<ol>
+<li>Virtual machine <em>Windows 10</em>: zaženi Unity aplikacijo.</li>
+<li>Virtual machine <em>Ubuntu Linux RT Libfranka</em>: zaženi <code>./Control_Libfranka 192.168.4.20</code>.</li>
+<li>Virtual machine <em>Windows 10</em>: zaženi <code>franka_control.slx</code>. V uporabniškem vmesniku izberi </li>
+<li><code>Enable Movement</code>-<code>On</code>, </li>
+<li><code>Grasp Mode</code>-<code>On</code>-<code>Close</code>, ko se prijemalo zapre sledi</li>
+<li><code>Grasp Mode</code>-<code>Off</code></li>
+<li><code>Move to Default Pose</code>, robot se bo premaknil v začetno postavitev,</li>
+<li><code>Enable Movement</code>-<code>Off</code>,</li>
+<li><code>Enable Movement</code>-<code>On</code>,</li>
+<li><code>Application Mode</code>-<code>On</code>.</li>
+<li>Računalnik <em>AI</em>: zaženi <code>python load_circ_modelUDP.py</code>.</li>
+<li>Virtual machine <em>Windows 10</em>: v uporabniškem vmesniku izberi </li>
+<li><code>Application Mode</code>-<code>Off</code>.</li>
+<li><code>Enable Movement</code>-<code>Off</code>.</li>
+<li>Po končanem izvajanju, ugasni <code>franka_control.slx</code> skripto, da se UDP buffer izprazni.</li>
+</ol>
 <h2 id="videji-primera-na-robotu">Videji primera na robotu</h2>
 <p>Videje je potrebno odpreti v novem oknu </p>
-<p><a href="https://youtu.be/Gal38w0Grzw">https://youtu.be/Gal38w0Grzw</a></p>
-<p><a href="https://youtu.be/wEuomAma0GY">https://youtu.be/Gal38w0Grzw</a></p>
-<p><a href="https://youtu.be/UMTpDaCiZ8Q">https://youtu.be/Gal38w0Grzw</a></p>
-<p><div class="video-container"><video style="width:50%" muted controls autoplay alt="type:video"><source src="https://youtu.be/Gal38w0Grzw" type="video/mp4"></source></video></div><div class="video-container"><video style="width:50%" muted controls autoplay alt="type:video"><source src="https://youtu.be/wEuomAma0GY" type="video/mp4"></source></video></div><div class="video-container"><video style="width:50%" muted controls autoplay alt="type:video"><source src="https://youtu.be/UMTpDaCiZ8Q" type="video/mp4"></source></video></div></p></div>
+<p><a href="https://youtu.be/Gal38w0Grzw">Primer 1</a></p>
+<p><a href="https://youtu.be/wEuomAma0GY">Primer 2</a></p>
+<p><a href="https://youtu.be/UMTpDaCiZ8Q">Primer 3</a></p></div>
 
 
 
