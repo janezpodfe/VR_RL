@@ -19,7 +19,7 @@
     
     
       
-        <title>Pomik paka v gol 2 - Spodbujevalno učenje</title>
+        <title>Pomik paka v gol za robota - Spodbujevalno učenje</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pomik-paka-v-gol-za-robota" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pomik paka v gol 2
+              Pomik paka v gol za robota
             
           </span>
         </div>
@@ -558,9 +563,11 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Pomik paka v gol 2
+        Pomik paka v gol za robota
       </a>
       
     </li>
@@ -575,7 +582,7 @@
   
     <li class="md-nav__item">
       <a href="../circ_env_pak_gol2/" class="md-nav__link">
-        Pomik paka v gol 3
+        Pomik paka v gol dodatni primeri
       </a>
     </li>
   
@@ -710,6 +717,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -724,11 +733,11 @@
                   
 
 
-  <h1>Pomik paka v gol 2</h1>
-
-<div><ul>
+<div><h1 id="pomik-paka-v-gol-za-robota">Pomik paka v gol za robota</h1>
+<ul>
 <li><code>__init__()</code></li>
 </ul>
+<p>v <code>__init__()</code> se določi parametre <code>self.max_agent_vel</code> in <code>self.max_puck_vel</code>. Za testiranje v simulaciji naj bodo kot določeni v primeru spodaj, za učenje za prenos na robota naj bodo <code>self.max_agent_vel = 1.0</code> in <code>self.max_puck_vel = 2.0</code>.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        <span class="n">agent_radius_px</span> <span class="o">=</span> <span class="mi">30</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="n">object_radius_px</span> <span class="o">=</span> <span class="mi">30</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_agent_vel</span> <span class="o">=</span> <span class="mf">2.0</span>
@@ -741,7 +750,7 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">max_agent_vel</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_agent_vel</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_agent</span><span class="p">(</span><span class="n">agent_radius_px</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">)</span> 
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_agent</span><span class="p">(</span><span class="n">agent_radius_px</span><span class="p">)</span> 
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_puck</span><span class="p">(</span><span class="n">object_radius_px</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">)</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_goal</span><span class="p">((</span><span class="mi">400</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">PPM</span><span class="p">))</span> 
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">create_border</span><span class="p">()</span> 

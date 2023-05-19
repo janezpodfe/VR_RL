@@ -1,0 +1,214 @@
+# Povezovanje z robotom
+
+## Povezovanje z robotom poteka preko UDP komunikacije.
+
+Za prikaz spodbujevalnega učenja na dejanskem robotu boste uporabili robota Franka Emika Panda, zaslon, ki je nameščen v delovnem prostoru robota, in IR senzorje za zaznavanje predmetov na zaslonu. Zaslon je prekrit s prozorno površino (pleksi steklo) z robovi in deluje kot delovni prostor za igralno okolje. Predmeti so postavljeni na površino iz pleksi stekla, IR-senzorji pa so nameščeni ob robu površine iz pleksi stekla.
+Franka Emika Panda je sodelujoč robotski manipulator s sedmimi stopnjami prostosti, senzorjem navora v vsakem sklepu, dosegom 855 mm in nosilnostjo 3 kg. Na vrhu ima prijemalo, s katerim lahko zgrabi predmete ali orodja. V našem primeru bomo uporabili 3D-natisnjeno orodje, ki predstavlja agenta. Robota se upravlja s shemo Simulink, ki pošilja podatke krmilniku robota prek protokola UDP (User Datagram Protocol). 
+Za vizualizacijo okolja se uporablja simulacijski zaslon v programu Unity, pravtako se za pošiljanje podatkov iz sheme Simulink v program Unity uporablja protokol UDP. Zaslon služi kot senzor za zaznavanje položaja predmetov na njem s pomočjo IR-senzorjev na robovih. Ko predmet prekine žarek, lahko sistem zazna in izmeri njegov položaj.
+
+Arhitektura celotnega sistema je prikazana na spodnji sliki. Agent se izvaja na ločenem računalniku in pošilja položaj agenta (puščica številka 1 na sliki 2) na računalnik, na katerem teče model Simulink in vizualizacija Unity. Model Simulink pošilja podatke za vodenje robota krmilniku robota (puščica številka 2). Na zaslonu se prikaže vizualizacija Unity. IR-senzorji zaznajo položaj predmeta v delovnem prostoru okolja in ga pošljejo v računalnik z modelom Simulink in vizualizacijo Unity (puščica številka 3). Stanje okolja se nazadnje pošlje nazaj v računalnik, ki izračuna dejanja agenta (puščica številka 4).
+
+![](images/robot_povezava1.png)
+
+**Slika z robotom in zaslonom**
+
+![](images/panda_zaslon_white.jpg){loading=lazy width="450"}
+
+**Orodje**
+
+![](images/panda_prijemalo_white.jpg){loading=lazy width="300"}
+
+**Primer premikanja v točko**
+
+![](images/robot_povezava2.png){loading=lazy width="600"}
+
+**Primer potiskanja žogice**
+
+![](images/robot_povezava3.png){loading=lazy width="600"}
+
+**Primer potiskanja naključnega objekta**
+
+![](images/robot_povezava4.png)
+
+## Predelana koda za komunikacijo z robotom
+
+``` py title="load_circ_modelUDP.py" linenums="1" hl_lines="8-10 14-21 40-67 72-75"
+import gym
+import numpy as np
+from sb3_contrib import TQC
+#from stable_baselines3 import PPO
+import os
+import circ_env
+
+import socket
+import sys
+import struct
+
+env = gym.make('circ_env/Circle-v0', render_mode="human")
+
+client_ip = "192.168.65.194"
+port_send  = 1026
+send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+port_rec  = 1027
+rec_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+rec_socket.bind(("0.0.0.0",port_rec))
+#rec_socket.settimeout(1.0)  # Set timeout to 1 second
+
+model = TQC.load("./models/TQC/11111", env=env)
+print("Model loaded.")
+
+# Reset the environment
+obs = env.reset()
+
+EPISODES = 1000
+
+for episode in range(EPISODES):
+
+    print("Episode: ", episode)
+    obs = env.reset()
+    done = False
+    total_reward = 0
+
+    while not done:
+
+        #lokacija pucka na plošči
+        try:
+            # Attempt to receive up to 1024 bytes of data
+            print("Try to receive data.")
+            data, addr = rec_socket.recvfrom(8)
+            puck_values = struct.unpack('2f', data)
+        except socket.timeout:
+            # Handle timeout exception
+            print("Timeout occurred while receiving data.")             
+        except socket.error:
+            # If no data is received, you get here, but it's not an error
+            # Ignore and continue
+            print("noData")
+            pass
+        
+        #print(puck_values)
+        
+        puck_pos = [puck_values[0], puck_values[1]]
+        print("puck_values", puck_values)
+
+        puck_pos[0] /= env.PPM
+        puck_pos[1] /= env.PPM
+        puck_pos[0] += env.width/2
+        puck_pos[1] += env.height/2
+
+        print("puck_pos", puck_pos)
+
+        env.set_puck_position([puck_pos[0],puck_pos[1]])
+
+        action, _state = model.predict(obs, deterministic=True)
+        obs, reward, done, _ = env.step(action)
+
+        sys.stdout.flush()
+        # agent pos., target pos. 
+        bin_vals = struct.pack('4f',(obs[0]-env.width/2)*env.PPM, (obs[1]-env.height/2)*env.PPM, (obs[2]-env.width/2)*env.PPM, (obs[3]-env.height/2)*env.PPM)
+        send_socket.sendto(bin_vals, (client_ip, port_send))
+
+        total_reward = total_reward + reward
+
+        env.render()
+
+    print("total reward", total_reward)
+        
+# Close the environment
+env.close()
+```
+
+## AI agenti
+
+Spremembne v python skripti `circ_env.py`
+
+- `__init__`
+
+Za vrstico `self.create_agent(agent_radius_px, 'k')` je potrebno postaviti agenta na sredino delovnega prostora s funkcijo `reset_agent`.
+
+``` py hl_lines="2"
+        self.create_agent(agent_radius_px, 'k') 
+        self.reset_agent((self.width/2, self.height/2))
+```
+
+- `reset`
+
+Potrebno je zakomentirati vrstico za resetiranje pozicije agenta. Če se pobira pozicijo tarče z zaslona, je potrebno zakomntirati tudi vrstico za resetiranje pozicije tarče.
+
+``` py 
+        #self.reset_agent((np.random.uniform(self.agent_radius*1.5, self.width - self.agent_radius*1.5), np.random.uniform(self.agent_radius*1.5, self.height - self.agent_radius*1.5)))
+        #self.reset_puck((np.random.uniform(self.object_radius+self.agent_radius*3, self.width - self.object_radius-self.agent_radius*3), np.random.uniform(self.object_radius+self.agent_radius*3, self.height - self.object_radius-self.agent_radius*3)))
+        #self.reset_target((np.random.uniform(self.agent_radius*2, self.width - self.agent_radius*2), np.random.uniform(self.agent_radius*2, self.height - self.agent_radius*2)))
+```
+
+- `step`
+
+Na koncu kode za nagrado je potrebno postaviti zastavico `done` na `False`, da se epozoda ne konča.
+
+``` py hl_lines="1"
+        done = False
+       
+        # Reward function stop
+        ############ DO TUKAJ SPREMINJATE
+```
+
+## Zagon na robotu
+
+### Unity & Simulink
+
+Pot do projekta z Unity in Simulink projekta
+`D:\VAJE\2023\VR`
+
+Pot do Simulink sheme
+`D:\VAJE\2023\VR\RL\EnvCirc\matlab`
+
+### Unity
+
+Zažene se UnityHub in projekt. Še bolje je zagnati kar `FrankaPandaIK.exe` aplikacijo, ki je na `D:\VAJE\2023\VR\RL\EnvCircAplikacija`.
+
+### Simulink
+
+Shema z imenom `franka_control.slx` v mapi `D:\VAJE\2023\VR\RL\EnvCirc\matlab`.
+
+### Ubuntu Linux RT Libfranka
+
+Terminal
+
+``` console
+cd users/aljazb/Control_Libfranka/libfranka/build/
+./Control_Libfranka 192.168.4.20
+```
+
+### Postopek zaganjanja
+
+1. Virtual machine *Windows 10*: zaženi Unity aplikacijo.
+2. Virtual machine *Ubuntu Linux RT Libfranka*: zaženi `./Control_Libfranka 192.168.4.20`.
+3. Virtual machine *Windows 10*: zaženi `franka_control.slx`. V uporabniškem vmesniku izberi 
+   1. `Enable Movement`-`On`, 
+   2. `Grasp Mode`-`On`-`Close`, ko se prijemalo zapre sledi
+   3. `Grasp Mode`-`Off`
+   4. `Move to Default Pose`, robot se bo premaknil v začetno postavitev,
+   5. `Enable Movement`-`Off`,
+   6. `Enable Movement`-`On`,
+   7. `Application Mode`-`On`.
+4. Računalnik *AI*: zaženi `python load_circ_modelUDP.py`.
+5. Virtual machine *Windows 10*: v uporabniškem vmesniku izberi 
+   1. `Application Mode`-`Off`.
+   2. `Enable Movement`-`Off`.
+6. Po končanem izvajanju, ugasni `franka_control.slx` skripto, da se UDP buffer izprazni.
+
+
+## Videji primera na robotu
+
+![](images/VID_20230517_130220_AdobeExpress(3).gif){loading=lazy width="350"}
+
+
+Videje je potrebno odpreti v novem oknu 
+
+[Primer 1](https://youtu.be/Gal38w0Grzw)
+
+[Primer 2](https://youtu.be/wEuomAma0GY)
+
+[Primer 3](https://youtu.be/UMTpDaCiZ8Q)
+
