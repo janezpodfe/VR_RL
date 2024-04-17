@@ -1,0 +1,63 @@
+# Priprava python okolja
+
+## Paket conda
+Paket conda je priljubljen upravitelj paketov za Python, ki se pogosto uporablja za razvoj in testiranje Python programov. Je tudi odlično orodje za upravljanje in vzdrževanje okolij Pythona, zlasti za usposabljanje in razvoj algoritmov spodbujevalnega učenja (RL).
+
+S paketom conda lahko preprosto ustvarite in upravljate okolja Python, kar vam omogoča delo na različnih projektih z različnimi knjižnicami in algoritmi, ne da bi vas skrbelo upravljanje več kopij istega paketa. Tako lahko na primer ustvarite novo okolje za projekt RL in vanj namestite potrebne knjižnice in algoritme. To okolje lahko nato uporabite za učenje in razvoj modela RL. Paket conda zagotavlja tudi veliko vgrajenih funkcij za upravljanje in organizacijo okolja, kot so spremenljivke okolja in upravitelji paketov.
+Paket conda je torej zmogljivo orodje za upravljanje in vzdrževanje okolij Pythona, zlasti za učenje in razvoj algoritmov spodbujevalnega učenja. Omogoča enostavno ustvarjanje in upravljanje okolij, namestitev potrebnih knjižnic in algoritmov ter obdelavo velikih količin podatkov. S paketom conda lahko preprosto zgradite in namestite svoj model RL ter hitro začnete s svojim prvim projektom.
+
+Bistvene točke:
+
+- Ustvarjanje različnih okolij v katerih imate lahko inštalirane programske pakete za rezlične pakete.
+- Inštalacije so ločene med okolji in ne vplivajo drugo na drugo.
+- Deluje na operacijskih sistemih Windowsi in Linux.
+- Spletna stran: [https://www.anaconda.com/](https://www.anaconda.com/)
+- Inštalacija po navodilih
+    - dodatna nastavitev `conda config --set auto_activate_base false`
+
+### Ustvarjanje python okolja s conda paketom
+
+`conda create --name rl_test python=3.9`
+### Aktivacija okolja
+
+`conda activate rl_test`
+
+### Deaktivacija okolja
+`conda deactivate`
+
+### Organizacija vaj
+#### Četrtkova skupina
+- conda okolje `rl_cet`
+
+#### Petkova skupina
+- conda okolje `rl_pet`
+
+# Navodila
+
+1. Odprite terminal z bližnjico **CTRL+ALT+T**
+2. Pomaknite se v mapo `RL` 
+   ``` console
+   cd RL
+   ```
+3. Ustvarite vaše mapo, npr. `rl_cet`:
+   ``` console
+   mkdir rl_cet
+   cd rl_cet
+   ```
+4. Ustvarite python okolje `rl_cet` s conda paketom
+   ``` console
+   conda create --name rl_cet python=3.9
+   ```
+5. Na vprašanje `Proceed ([y]/n)?` odgovorite z `y`.
+6. Aktivirajte okolje 
+   ``` console
+   conda activate rl_cet
+   ```
+7. Inštalacija python paketov za spodbujevalno učenje
+   ``` console
+   pip install gym==0.21.0
+   pip install pyglet==1.5.27
+   pip install stable-baselines3
+   pip install sb3_contrib
+   pip install tensorboard
+   ```
