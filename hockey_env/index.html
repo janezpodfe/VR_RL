@@ -915,6 +915,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-igranja-hokeja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test igranja hokeja
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -987,6 +996,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-igranja-hokeja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test igranja hokeja
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1009,7 +1027,16 @@
 <p>Razred <code>HockeyEnv</code> ustvari svet Pybox2D in inicializira entitete igre, kot so igralci, plošček in vratnice. Okolje ustvari tudi dva objekta umetne inteligence, <code>top_ai</code> in <code>bottom_ai</code>, ki nadzorujeta gibanje nasprotnika. Ta objekta uporabljata preprosto hevristično strategijo sledenja ploščku in premikanja proti njemu za obrambo gola.</p>
 <p>Koda opredeljuje tudi razred <code>ContactListener</code>, ki podeduje razred <code>b2ContactListener</code>, ki ga zagotavlja Pybox2D. Ta razred se uporablja za zaznavanje trkov med entitetami igre. </p>
 <p>Na koncu razred <code>HockeyEnv</code> definira več metod za pridobivanje položajev in hitrosti igralnih entitet, posodabljanje stanja igre in prikazovanja igre. Igra se lahko v realnem času prikaže v oknu Pygame, zaslon pa se lahko shrani v obliki videoposnetka.</p>
-<p><img alt="" loading="lazy" src="../images/hokey.gif" width="350"></p></div>
+<p><img alt="" loading="lazy" src="../images/hokey.gif" width="350"></p>
+<h2 id="test-igranja-hokeja">Test igranja hokeja</h2>
+<p>Odprite python skripto <code>hockey_world.py</code> v mapi <code>CircEnv/circ_env/envs</code>. Poiščite spodnje vrstice v funkciji <code>step()</code>:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        <span class="c1">############ TUKAJ SPREMINJATE</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="c1">#action = self.bottom_ai.move()</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="c1">#action = self.move_agent_mouse()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">set_agent_velocity</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Če želite agenta premikati s tipkami na tipkovnici zakomentirajte prvi dve vrstici, kot je prikazano zgoraj.</p>
+<p>Če želite agenta premikati z miško odkomentirajte vrstico <code>action = self.move_agent_mouse()</code>. Če želite, da ai agenta igrata drug proti drugemu, zakomentirajte vrstico <code>action = self.move_agent_mouse()</code> in odkomentirajte vrstico <code>action = self.bottom_ai.move()</code>.</p></div>
 
 
 
