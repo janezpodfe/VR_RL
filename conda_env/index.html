@@ -1227,11 +1227,17 @@ Paket conda je torej zmogljivo orodje za upravljanje in vzdrževanje okolij Pyth
 <h3 id="organizacija-vaj">Organizacija vaj</h3>
 <h4 id="cetrtkova-skupina">Četrtkova skupina</h4>
 <ul>
-<li>conda okolje <code>rl_cet</code></li>
+<li>conda okolje <code>rl_test</code></li>
+<li>mapa <code>rl_cet</code></li>
 </ul>
 <h4 id="petkova-skupina">Petkova skupina</h4>
 <ul>
-<li>conda okolje <code>rl_pet</code></li>
+<li>conda okolje <code>rl_test</code></li>
+<li>
+<ul>
+<li>mapa <code>rl_pet</code></li>
+</ul>
+</li>
 </ul>
 <h1 id="navodila">Navodila</h1>
 <ol>
@@ -1243,19 +1249,28 @@ Paket conda je torej zmogljivo orodje za upravljanje in vzdrževanje okolij Pyth
    <div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">mkdir rl_cet</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">cd rl_cet</span>
 </span></code></pre></div></li>
-<li>Ustvarite python okolje <code>rl_cet</code> s conda paketom
-   <div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">conda create --name rl_cet</span>
+<li>Potrebno je inštalirati ustrezne Linux programe
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">   sudo apt-get update</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">   sudo apt-get install curl</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">   sudo apt autoremove</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">   sudo apt install python3-pip</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">   sudo apt install swig</span>
+</span></code></pre></div></li>
+<li>Nato je potrebno inštalirati condo</li>
+<li>Ustvarite python okolje <code>rl_test</code> s conda paketom
+   <div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">conda create --name rl_test python=3.8</span>
 </span></code></pre></div></li>
 <li>Na vprašanje <code>Proceed ([y]/n)?</code> odgovorite z <code>y</code>.</li>
 <li>Aktivirajte okolje 
-   <div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">conda activate rl_cet</span>
+   <div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">conda activate rl_test</span>
 </span></code></pre></div></li>
 <li>Inštalacija python paketov za spodbujevalno učenje
-   <div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">pip install "gymnasium[all]"</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">pip install pygame</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">pip install stable-baselines3</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">pip install tensorboard</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">pip install sb3_contrib</span>
+   <div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">pip install "gymnasium[all]"</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">pip install pygame</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">pip install stable-baselines3</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="go">pip install tensorboard</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">pip install sb3_contrib</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="go">pip install standard-imghdr</span>
 </span></code></pre></div></li>
 </ol></div>
 
